@@ -13,14 +13,14 @@ Quickstarts are provided for [**Amazon Web Services** (`aws`)](./aws), [**Micros
 
 Each quickstart will install Otomi on a 3 nodes Kubernetes cluster. This setup provides easy access to all Otomi functionality while establishing a foundation that can be easily expanded to a full enterprise setup (using a public DNS zone, an external Git repository, or using Azure Active Directory as an IDP.
 
-### Requirements - Cloud
+### Requirements
 
 - Terraform >=0.14.0
 - Credentials for the cloud provider used for the quickstart
 
 ### Deploy
 
-To begin with any quickstart, perform the following steps:
+To begin with any of the public cloud quickstarts, perform the following steps:
 
 1. Clone or download this repository to a local folder
 1. Choose a cloud provider and navigate into the provider's folder
@@ -29,7 +29,6 @@ To begin with any quickstart, perform the following steps:
 1. Run `terraform apply`
 
 When provisioning has finished, terraform will output the URL to connect to Otomi Console. Before you can sign-in, first create a new user in Keycloak. Follow the post installation instuctions [here](https://otomi.io/docs/installation/post-install-actions)
-
 
 ### Remove
 
