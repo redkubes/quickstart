@@ -1,13 +1,13 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your infrastructure provider of choice.
+Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine with kind
 
 Intended for experimentation/evaluation ONLY.
 
 **You will be responsible for any/all infrastructure costs incurred by these used resources.**
 This repository intends to minimize costs by only provisioning the minimum required resources for a given provider.
 
-## Infrastructure providers
+## Public cloud providers
 
 Quickstarts are provided for [**Amazon Web Services** (`aws`)](./aws), [**Microsoft Azure Cloud** (`azure`)](./azure), and [**Google Cloud Platform** (`gcp`)](./gcp).
 
@@ -39,4 +39,10 @@ When you're finished exploring Otomi, use terraform to tear down all resources i
 Make sure you tear down any resources you provisioned manually before running the destroy command.
 
 Run `terraform destroy -auto-approve` to remove all resources without prompting for confirmation.
+
+## Local deployment (comming soon)
+
+Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [kind](https://kind.sigs.k8s.io/)
+
+
 
