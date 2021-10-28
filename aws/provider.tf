@@ -9,6 +9,28 @@ provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
   token                  = data.aws_eks_cluster_auth.cluster.token
-  # config_path    = "~/.kube/config"
-  # config_context = "my-context"
+  config_path    = "~/.kube/config"
+  # config_context = local.name
+}
+
+provider "helm" {
+  kubernetes {
+    host                   = data.aws_eks_cluster.cluster.endpoint
+    cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+    config_path = "~/.kube/config"
+    # config_context = local.name
+
+  }
+}
+
+resource "helm_release" "wordpress" {
+  name       = "quickstart-wordpress"
+
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "wordpress"
+
+  # set {
+  #   name  = "service.type"
+  #   value = "ClusterIP"
+  # }
 }

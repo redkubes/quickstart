@@ -6,5 +6,9 @@ terraform {
     local      = ">= 1.4"
     random     = ">= 2.1"
     kubernetes = "~> 2.0"
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.3.0"
+    }
   }
 }

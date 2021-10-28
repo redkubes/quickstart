@@ -41,7 +41,7 @@ variable "aws_accounts" {
   ]
 }
 
-variable "roles" {
+variable "aws_roles" {
   description = "Additional IAM roles to add to the aws-auth configmap."
   type = list(object({
     rolearn  = string
@@ -57,7 +57,7 @@ variable "roles" {
   ]
 }
 
-variable "users" {
+variable "aws_users" {
   description = "Additional IAM users to add to the aws-auth configmap."
   type = list(object({
     userarn  = string
