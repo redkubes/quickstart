@@ -1,6 +1,6 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine with kind
+Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine with KinD.
 
 Intended for experimentation/evaluation ONLY.
 
@@ -9,9 +9,17 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ## Public cloud providers
 
-Quickstarts are provided for [**Amazon Web Services** (`aws`)](./aws), [**Microsoft Azure Cloud** (`azure`)](./azure), and [**Google Cloud Platform** (`gcp`)](./gcp).
+Quickstarts are available for:
 
-Each quickstart will install Otomi on a 3 nodes Kubernetes cluster. This setup provides easy access to all Otomi functionality while establishing a foundation that can be easily expanded to a full enterprise setup (using a public DNS zone, an external Git repository, or using Azure Active Directory as an IDP.
+- [**Google Cloud Platform** (`gcp`)](./gcp)
+
+We will soon make quickstarts available for:
+
+- [**Amazon Web Services** (`aws`)](./aws)
+- [**Microsoft Azure Cloud** (`azure`)](./azure)
+
+Each quickstart will install Otomi on a 3 nodes Managed Kubernetes cluster. This setup provides easy access to all Otomi functionality. 
+Quickstarts are for experimentation and evaluation purposes only. while For a full setup (using a public DNS zone, an external Git repository to store Otomi configuration code, using Azure Active Directory as an IDP and use KMS to encrypt sensitive information), please visit https://otomi.io
 
 ### Requirements
 
@@ -41,7 +49,7 @@ Run `terraform destroy -auto-approve` to remove all resources without prompting 
 
 ## Local deployment (comming soon)
 
-Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [kind](https://kind.sigs.k8s.io/)
+Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [KinD](https://kind.sigs.k8s.io/)
 
 
 
