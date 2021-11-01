@@ -20,8 +20,8 @@ module "eks" {
 
   node_groups = {
     default = {
-      desired_capacity = 5
-      max_capacity     = 5
+      desired_capacity = 3
+      max_capacity     = 3
       min_capacity     = 1
 
       instance_types = ["c5.xlarge"]
@@ -43,7 +43,13 @@ module "eks" {
   map_roles    = var.aws_roles
   map_users    = var.aws_users
   map_accounts = var.aws_accounts
-
+  
+  depends_on = [
+    aws_iam_role_policy_attachment.node-group-AmazonEKSWorkerNodePolicy,
+    aws_iam_role_policy_attachment.node-group-AmazonEKS_CNI_Policy,
+    aws_iam_role_policy_attachment.node-group-AmazonEC2ContainerRegistryReadOnly,
+    aws_iam_role_policy_attachment.node-group-ElasticLoadBalancingFullAccess
+  ]
   tags = {
     community                                 = local.name
     "k8s.io/cluster-autoscaler/enabled"       = "true"
