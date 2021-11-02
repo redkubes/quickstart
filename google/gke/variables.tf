@@ -1,3 +1,18 @@
+variable "gke_username" {
+  default     = ""
+  description = "gke username"
+}
+
+variable "gke_password" {
+  default     = ""
+  description = "gke password"
+}
+
+variable "gke_num_nodes" {
+  default     = 2
+  description = "number of gke nodes"
+}
+
 variable "project_id" {
   description = "The project ID to host the cluster in"
 }
@@ -12,20 +27,4 @@ variable "env_name" {
 variable "region" {
   description = "The region to host the cluster in"
   default     = "europe-west4"
-}
-variable "network" {
-  description = "The VPC network created to host the cluster in"
-  default     = "gke-quickstart-network"
-}
-variable "subnetwork" {
-  description = "The subnetwork created to host the cluster in"
-  default     = "gke-quickstart-subnet"
-}
-variable "ip_range_pods_name" {
-  description = "The secondary ip range to use for pods"
-  default     = "ip-range-pods"
-}
-variable "ip_range_services_name" {
-  description = "The secondary ip range to use for services"
-  default     = "ip-range-services"
 }
