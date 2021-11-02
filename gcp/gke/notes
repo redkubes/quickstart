@@ -1,0 +1,19 @@
+gcloud init
+gcloud auth login
+gcloud auth application-default login
+
+# Update Kubeconfig
+gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)
+
+
+# Compute Engine API enabled
+gcloud services enable compute.googleapis.com
+gcloud services enable container.googleapis.com
+
+
+kubernetes_cluster_host = "34.141.174.13"
+kubernetes_cluster_name = "gke-quickstart"
+project_id = "community-quickstart"
+region = "europe-west4"
+
+export GOOGLE_PROJECT=YOUR_PROJECT_NAME

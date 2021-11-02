@@ -1,10 +1,10 @@
 cluster:
   owner: redkubes
   k8sVersion: '1.20'
-  name: quickstart
+  name: otomi
   provider: google
   region: europe-west4
-  domainSuffix: quickstart.quickstart.gke-community
+  domainSuffix: otomi.quickstart.gke-community
 otomi:
   adminPassword: otomihq
   isMultitenant: true
@@ -16,8 +16,8 @@ otomi:
 dns:
   provider:
     google:
-      serviceAccountKey: 4d3a7b1812137359ad3f500f39f56ef46556365d
-      project: western-trees-330310
+      serviceAccountKey: 719fe375761f8b6ffe58468d3585a03d364e9020
+      project: community-quickstart
 charts:
   cert-manager:
     email: admins@redkubes.com #required? otherwise make generic default

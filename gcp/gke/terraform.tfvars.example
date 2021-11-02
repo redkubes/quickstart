@@ -1,0 +1,3 @@
+# This is an example. Fill in the correct project details
+project_id = "community-quickstart"
+region     = "europe-west4"

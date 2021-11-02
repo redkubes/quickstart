@@ -1,8 +1,6 @@
 variable "project_id" {
-  type    = string
-  default = "western-trees-330310"
+  type = string
 }
-
 
 variable "region" {
   type    = string

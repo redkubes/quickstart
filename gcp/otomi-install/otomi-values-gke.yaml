@@ -1,0 +1,27 @@
+cluster:
+  owner: redkubes
+  k8sVersion: '1.20'
+  name: otomi
+  provider: google
+  region: europe-west4
+  domainSuffix: otomi.quickstart.gke-community
+otomi:
+  adminPassword: otomihq
+  isMultitenant: true
+  isManaged: true
+  hasCloudLB: false
+  globalPullSecret:
+    username: otomi
+    password: f7c00687-0223-44ac-931b-a56c6bb0144f
+dns:
+  provider:
+    google:
+      serviceAccountKey: 719fe375761f8b6ffe58468d3585a03d364e9020
+      project: community-quickstart
+charts:
+  cert-manager:
+    email: admins@redkubes.com #required? otherwise make generic default
+    stage: staging
+  external-dns:
+    domainFilters:
+      - quickstart.gke-community
