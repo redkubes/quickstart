@@ -1,0 +1,2 @@
+aks_cluster_name = "community-quickstart-aks"
+resource_group_name = "community-quickstart-rg"

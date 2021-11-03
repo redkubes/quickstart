@@ -1,0 +1,12 @@
+cluster:
+  k8sVersion: '1.20'
+  k8sContext: community-quickstart-aks
+  name: jeho
+  owner: redkubes
+  provider: azure
+otomi:
+  adminPassword: bladibla
+  globalPullSecret:
+    username: otomi
+    password: f7c00687-0223-44ac-931b-a56c6bb0144f
+  version: custom-ca
