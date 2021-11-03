@@ -1,6 +1,6 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine with KinD.
+Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine using Minikube.
 
 Intended for experimentation/evaluation ONLY.
 
@@ -49,7 +49,7 @@ Run `terraform destroy -auto-approve` to remove all resources without prompting 
 
 ## Local deployment (comming soon)
 
-Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [KinD](https://kind.sigs.k8s.io/)
+Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using Minikube
 
 
 
