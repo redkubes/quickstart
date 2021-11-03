@@ -1,29 +1,34 @@
 ## Getting started with Otomi on GKE
+
 ---
+
 ### Prerequisites
 
 - [GCloud SDK](https://cloud.google.com/sdk/docs/install)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-
 ### Set up a managed kubernetes cluster on GKE
 
-- Navigate into the `gcp/gke` directory
+- Navigate into the `gke` directory
 - Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
-- Open a terminal and run the following, 
+
+- Open a terminal and run the following,
+
 ```bash
-# Initialises the directory
+# Initializes the directory
 terraform init
 # Sets up the GKE cluster
 terraform apply
 ```
 
 ### Install Otomi
-- Navigate to the `gke/otomi-install` directory
+
+- Navigate to the `otomi-install` directory
 - Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
-- Open a terminal and run the following, 
+- Open a terminal and run the following,
+
 ```bash
-# Initialises the directory
+# Initializes the directory
 terraform init
 # Deploys and otomi installer job on the GKE cluster
 terraform apply
