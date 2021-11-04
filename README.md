@@ -1,25 +1,34 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your public cloud of choice or (comming soon) run Otomi locally on your machine using Minikube.
+Quickly deploy Otomi in your public cloud of choice or install it locally on your machine(Minikube cluster).
 
-Intended for experimentation/evaluation ONLY.
+**NOTE:** Intended for experimentation/evaluation ONLY.
 
 **You will be responsible for any/all infrastructure costs incurred by these used resources.**
 This repository intends to minimize costs by only provisioning the minimum required resources for a given provider.
 
-## Public cloud providers
+---
 
-Quickstarts are available for:
+### Public cloud providers
+
+Quickstart is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
-
-We will soon make quickstarts available for:
-
-- [**Amazon Web Services** (`aws`)](./aws)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 
-Each quickstart will install Otomi on a 3 nodes Managed Kubernetes cluster. This setup provides easy access to all Otomi functionality. 
-Quickstarts are for experimentation and evaluation purposes only. while For a full setup (using a public DNS zone, an external Git repository to store Otomi configuration code, using Azure Active Directory as an IDP and use KMS to encrypt sensitive information), please visit https://otomi.io
+We will soon make quickstart available for:
+
+- [**Amazon Web Services** (`aws`)](./aws)
+
+The quickstart example will install Otomi on a 3 nodes Managed Kubernetes cluster as this setup provides easy access to all Otomi functionalities.
+
+### Local cluster using Minikube(Coming Soon)
+
+- Next to the quickstart for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+For a full installation setup, please visit [otomi.io](https://otomi.io)
+
+----
 
 ### Requirements
 
@@ -28,17 +37,24 @@ Quickstarts are for experimentation and evaluation purposes only. while For a fu
 
 ### Deploy
 
-To begin with any of the public cloud quickstarts, perform the following steps:
+To begin with any of the public cloud quickstart, perform the following steps:
 
-1. Clone or download this repository to a local folder
-1. Choose a cloud provider and navigate into the provider's folder
-1. Copy or rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
-1. Run `terraform init`
-1. Run `terraform apply`
+1. Clone or download this repository
+2. Choose a cloud provider and navigate into `<cloud-provider>/<managed-k8s>` folder
+3. Rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
+4. Run `terraform init`
+5. Run `terraform apply`
 
-When provisioning has finished, terraform will output the URL to connect to Otomi Console. Before you can sign-in, first create a new user in Keycloak. Follow the post installation instuctions [here](https://otomi.io/docs/installation/post-install-actions)
+Once the managed kubernetes clusters are up and running,
 
-### Remove
+1. Navigate to `otomi-install` folder
+2. Rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
+3. Run `terraform init`
+4. Run `terraform apply`
+
+Follow the post installation instructions [here.](https://otomi.io/docs/installation/post-install-actions)
+
+### Destroy
 
 When you're finished exploring Otomi, use terraform to tear down all resources in the quickstart.
 
@@ -46,10 +62,3 @@ When you're finished exploring Otomi, use terraform to tear down all resources i
 Make sure you tear down any resources you provisioned manually before running the destroy command.
 
 Run `terraform destroy -auto-approve` to remove all resources without prompting for confirmation.
-
-## Local deployment (comming soon)
-
-Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using Minikube
-
-
-
