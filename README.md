@@ -1,6 +1,6 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your public cloud of choice or install it locally on your machine(KinD cluster).
+Quickly deploy Otomi in your public cloud of choice or install it locally on your machine(Minikube cluster).
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -8,28 +8,33 @@ Quickly deploy Otomi in your public cloud of choice or install it locally on you
 This repository intends to minimize costs by only provisioning the minimum required resources for a given provider.
 
 ---
+
 ### Public cloud providers
 
 Quickstart is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
+- [**Microsoft Azure Cloud** (`azure`)](./azure)
 
 We will soon make quickstart available for:
+
 - [**Amazon Web Services** (`aws`)](./aws)
-- [**Microsoft Azure Cloud** (`azure`)](./azure)
 
 The quickstart example will install Otomi on a 3 nodes Managed Kubernetes cluster as this setup provides easy access to all Otomi functionalities.
 
-### Local cluster using KinD
-- Next to the quickstart for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [KinD](https://kind.sigs.k8s.io/)
+### Local cluster using Minikube(Coming Soon)
+
+- Next to the quickstart for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 For a full installation setup, please visit [otomi.io](https://otomi.io)
 
 ----
+
 ### Requirements
 
 - Terraform >=0.14.0
 - Credentials for the cloud provider used for the quickstart
+
 ### Deploy
 
 To begin with any of the public cloud quickstart, perform the following steps:
