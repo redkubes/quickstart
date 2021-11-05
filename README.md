@@ -11,7 +11,7 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ### Public cloud providers
 
-Quickstarta are available for:
+Quickstarts are available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
@@ -22,7 +22,7 @@ We will soon make a quickstart available for:
 
 - [**Amazon Web Services** (`aws`)](./aws)
 
-The quickstart examples will install Otomi on a 3 nodes Managed Kubernetes cluste, as this setup provides easy access to all Otomi features.
+The quickstart examples will install Otomi on a 3 nodes Managed Kubernetes cluster as this setup provides easy access to all Otomi features.
 
 ### Local cluster using Minikube (Coming Soon)
 
@@ -52,7 +52,16 @@ Once the cluster is up and running,
 3. Run `terraform init`
 4. Run `terraform apply`
 
-Follow the post installation instructions [here.](https://otomi.io/docs/installation/post-install-actions)
+### Next Steps
+
+1. Monitor the logs of the installer job
+
+   ```bash
+   kubectl logs jobs/quickstart-otomi -n default -f
+   ```
+
+2. When the installer is finished, copy the `url` and `admin-password` from the console output
+3. Follow the post installation instructions [here](https://otomi.io/docs/installation/post-install-actions)
 
 ### Destroy
 
@@ -61,4 +70,8 @@ When you're finished exploring Otomi, use terraform to tear down all resources i
 **NOTE: Any resources not provisioned by the quickstart are not guaranteed to be destroyed when tearing down the quickstart.**
 Make sure you tear down any resources you provisioned manually before running the destroy command.
 
-Run `terraform destroy -auto-approve` to remove all resources without prompting for confirmation.
+```bash
+# Navigate into `<cloud-provider>/<managed-k8s>` folder and run
+terraform destroy -auto-approve
+# This destroys all the resources without prompting confirmation
+```
