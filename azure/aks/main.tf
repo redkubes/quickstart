@@ -23,7 +23,7 @@ resource "azurerm_subnet" "community-quickstart" {
   resource_group_name  = azurerm_resource_group.community-quickstart.name
   address_prefixes     = ["10.1.0.0/22"]
 
- /* delegation {
+  /* delegation {
     name = "delegation"
 
     service_delegation {
@@ -74,7 +74,3 @@ resource "azurerm_kubernetes_cluster" "community-quickstart" {
     Environment = "community"
   }
 }
-
-
-
-

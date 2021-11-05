@@ -1,2 +1,10 @@
-aks_cluster_name = "community-quickstart-aks"
-resource_group_name = "community-quickstart-rg"
+# Required variables
+# - Fill in before beginning quickstart
+# - Check variables.tf for variable type(includes defaults)
+# ==========================================================
+
+# AKS Cluster Name
+aks_cluster_name = ""
+
+# Azure Resource Group
+resource_group_name = ""
