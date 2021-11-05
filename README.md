@@ -1,6 +1,6 @@
-# Quickstart examples for Otomi
+# Otomi Quickstarts
 
-Quickly deploy Otomi in your public cloud of choice or install it locally on your machine (using Minikube).
+Quickly deploy a Kubernetes cluster with Otomi in your public cloud of choice or install Otomi locally on your machine using Minikube.
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -9,26 +9,18 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ---
 
-### Public cloud providers
+## Public cloud providers
 
 Quickstarts are available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 
-For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+The Quickstart will create a managed Kubernetes cluster (AKS/GKE/EKS) and install Otomi without external dependencies like DNS, Active Directory or KMS. For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
 
 We will soon make a quickstart available for:
 
 - [**Amazon Web Services** (`aws`)](./aws)
-
-The quickstart examples will install Otomi on a 3 nodes Managed Kubernetes cluster as this setup provides easy access to all Otomi features.
-
-### Local cluster using Minikube (Coming Soon)
-
-- Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-
-----
 
 ### Requirements
 
@@ -56,9 +48,9 @@ Once the cluster is up and running,
 
 1. Monitor the logs of the installer job
 
-   ```bash
-   kubectl logs jobs/quickstart-otomi -n default -f
-   ```
+```bash
+kubectl logs jobs/quickstart-otomi -n default -f
+```
 
 2. When the installer is finished, copy the `url` and `admin-password` from the console output
 3. Follow the post installation instructions [here](https://otomi.io/docs/installation/post-install-actions)
@@ -75,3 +67,7 @@ Make sure you tear down any resources you provisioned manually before running th
 terraform destroy -auto-approve
 # This destroys all the resources without prompting confirmation
 ```
+
+## Local cluster using Minikube (Coming Soon)
+
+- Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
