@@ -5,7 +5,7 @@
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Set up a managed kubernetes cluster on AKS
+### Set up AKS in Azure
 
 - Navigate into the `aks` directory
 - Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
@@ -31,12 +31,9 @@ terraform init
 terraform apply
 ```
 
-### Some useful Azure CLI commands
-
-The following commands will be handy in case you have not setup your Azure CLI
+### Access the cluster API
 
 ```bash
-# Initialize and authentication
 az login
 az account list
 az account set --subscription=<subscription_id>
