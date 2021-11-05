@@ -1,10 +1,10 @@
 # Otomi Quickstarts
 
-Quickly deploy a Kubernetes cluster with Otomi in your public cloud of choice or install Otomi locally on your machine using Minikube.
+Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) in your public cloud of choice or install Otomi locally on your machine using Minikube.
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
-**You will be responsible for any/all infrastructure costs incurred by these used resources.**
+**You will be responsible for any/all infrastructure costs incurred by the used resources.**
 This repository intends to minimize costs by only provisioning the minimum required resources for a given provider.
 
 ---
@@ -53,7 +53,7 @@ kubectl logs jobs/quickstart-otomi -n default -f
 ```
 
 2. When the installer is finished, copy the `url` and `admin-password` from the console output
-3. Follow the post installation instructions [here](https://otomi.io/docs/installation/post-install-actions)
+3. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
 
 ### Destroy
 
