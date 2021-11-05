@@ -70,4 +70,4 @@ terraform destroy -auto-approve
 
 ## Local cluster using Minikube (Coming Soon)
 
-- Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+Next to the quickstarts for running Otomi in your public cloud of choice, you will soon also be able to run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
