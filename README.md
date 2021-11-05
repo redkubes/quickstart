@@ -1,6 +1,6 @@
 # Quickstart examples for Otomi
 
-Quickly deploy Otomi in your public cloud of choice or install it locally on your machine(Minikube cluster).
+Quickly deploy Otomi in your public cloud of choice or install it locally on your machine (using Minikube).
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -11,22 +11,22 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ### Public cloud providers
 
-Quickstart is available for:
+Quickstarta are available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 
-We will soon make quickstart available for:
+For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+
+We will soon make a quickstart available for:
 
 - [**Amazon Web Services** (`aws`)](./aws)
 
-The quickstart example will install Otomi on a 3 nodes Managed Kubernetes cluster as this setup provides easy access to all Otomi functionalities.
+The quickstart examples will install Otomi on a 3 nodes Managed Kubernetes cluste, as this setup provides easy access to all Otomi features.
 
-### Local cluster using Minikube(Coming Soon)
+### Local cluster using Minikube (Coming Soon)
 
-- Next to the quickstart for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-
-For a full installation setup, please visit [otomi.io](https://otomi.io)
+- Next to the quickstarts for running Otomi in your public cloud of choice, you can also run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 ----
 
@@ -45,7 +45,7 @@ To begin with any of the public cloud quickstart, perform the following steps:
 4. Run `terraform init`
 5. Run `terraform apply`
 
-Once the managed kubernetes clusters are up and running,
+Once the cluster is up and running,
 
 1. Navigate to `otomi-install` folder
 2. Rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
