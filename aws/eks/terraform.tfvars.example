@@ -12,17 +12,14 @@ aws_roles = ""
 # AWS IAM Users
 # aws_users = ""
 
-
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
 
 # AWS region for all resources
 # aws_region = ""
 
-
 # EC2 instance size of all created instances
 # instance_type = ""
-
 
 # Kubernetes version used for creating workload cluster
 # cluster_version = ""

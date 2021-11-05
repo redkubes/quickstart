@@ -17,6 +17,6 @@ resource "helm_release" "otomi" {
   chart      = "otomi"
 
   values = [
-    file("${path.module}/otomi-values.yaml")
+    file("${path.module}/otomi-values-eks.yaml")
   ]
 }

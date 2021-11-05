@@ -1,0 +1,6 @@
+cluster:
+  owner: redkubes
+  k8sVersion: '1.20'
+  name: quickstart
+  provider: aws
+  region: eu-central-1

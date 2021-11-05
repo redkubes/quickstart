@@ -1,0 +1,6 @@
+# Required variables
+# - Fill in before beginning otomi-install
+# - Check variables.tf for variable type(includes defaults)
+# ==========================================================
+
+aws_region = ""
