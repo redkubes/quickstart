@@ -1,2 +1,10 @@
-project_id = "community-quickstart"
-region     = "europe-west4"
+# Required variables
+# - Fill in before beginning quickstart
+# - Check variables.tf for variable type(includes defaults)
+# ==========================================================
+
+# Google Project ID
+project_id = ""
+
+# GCP Project Region
+region     = ""

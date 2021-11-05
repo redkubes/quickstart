@@ -1,22 +1,20 @@
 ## Getting started with Otomi on AKS
 
----
-
 ### Prerequisites
 
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Set up a managed kubernetes cluster on GKE
+### Set up a managed kubernetes cluster on AKS
 
-- Navigate into the `gke` directory
+- Navigate into the `aks` directory
 - Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
 - Open a terminal and run the following,
 
 ```bash
 # Initializes the directory
 terraform init
-# Sets up the GKE cluster
+# Sets up the AKS cluster
 terraform apply
 ```
 

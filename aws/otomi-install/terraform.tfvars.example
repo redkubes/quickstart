@@ -1,10 +1,6 @@
 # Required variables
-# - Fill in before beginning quickstart
+# - Fill in before beginning otomi-install
 # - Check variables.tf for variable type(includes defaults)
 # ==========================================================
 
-# AKS Cluster Name
-aks_cluster_name = ""
-
-# Azure Resource Group
-resource_group_name = ""
+aws_region = ""

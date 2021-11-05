@@ -3,23 +3,17 @@
 # - Check variables.tf for variable type(includes defaults)
 # ==========================================================
 
-# AWS Accounts
-aws_accounts = ""
+# Azure Subscription Id
+az_subscription_id = ""
 
-# AWS IAM Roles
-aws_roles = ""
-
-# AWS IAM Users
-aws_users = ""
+# Azure az_tenant_id Id
+az_tenant_id = ""
 
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
 
-# AWS region for all resources
-# aws_region = ""
+# Azure Resource Group
+# resource_group_name = ""
 
-# EC2 instance size of all created instances
-# instance_type = ""
-
-# Kubernetes version used for creating workload cluster
-# cluster_version = ""
+# Azure Location
+# location = ""
