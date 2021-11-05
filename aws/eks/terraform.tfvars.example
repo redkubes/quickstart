@@ -10,7 +10,7 @@ aws_accounts = ""
 aws_roles = ""
 
 # AWS IAM Users
-# aws_users = ""
+aws_users = ""
 
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
