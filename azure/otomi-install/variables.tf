@@ -1,9 +1,9 @@
 variable "aks_cluster_name" {
   type    = string
-  default = "community-quickstart-aks"
+  default = "otomi-quickstart-aks"
 }
 
 variable "resource_group_name" {
   type    = string
-  default = "community-quickstart-rg"
+  default = "otomi-quickstart-rg"
 }

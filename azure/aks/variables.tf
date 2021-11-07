@@ -8,7 +8,7 @@ variable "az_tenant_id" {
 
 variable "resource_group_name" {
   description = "Name of the resource group"
-  default     = "community-quickstart"
+  default     = "otomi-quickstart"
 }
 
 variable "location" {

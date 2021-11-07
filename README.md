@@ -29,18 +29,18 @@ We will soon make a quickstart available for:
 
 ### Deploy
 
-To begin with any of the public cloud quickstart, perform the following steps:
+To deploy a quickstart, perform the following steps:
 
 1. Clone or download this repository
 2. Choose a cloud provider and navigate into `<cloud-provider>/<managed-k8s>` folder
-3. Rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
+3. Add the required information to the `terraform.tfvars`
 4. Run `terraform init`
 5. Run `terraform apply`
 
 Once the cluster is up and running,
 
 1. Navigate to `otomi-install` folder
-2. Rename `terraform.tfvars.example` to `terraform.tfvars` and fill in all required variables
+2. Change the variables in the `terraform.tfvars` if not using defaults
 3. Run `terraform init`
 4. Run `terraform apply`
 

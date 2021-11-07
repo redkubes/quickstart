@@ -51,7 +51,7 @@ module "eks" {
     aws_iam_role_policy_attachment.node-group-ElasticLoadBalancingFullAccess
   ]
   tags = {
-    community                                 = local.name
+    otomi.quickstart                                 = local.name
     "k8s.io/cluster-autoscaler/enabled"       = "true"
     "k8s.io/cluster-autoscaler/${local.name}" = "owned"
   }

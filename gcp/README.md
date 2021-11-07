@@ -10,7 +10,7 @@
 ### Set up a managed kubernetes cluster on GKE
 
 - Navigate into the `gke` directory
-- Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
+- Add your Project ID and Project Region to the `terraform.tfvars`
 
 - Open a terminal and run the following,
 
@@ -20,11 +20,10 @@ terraform init
 # Sets up the GKE cluster
 terraform apply
 ```
-
 ### Install Otomi
 
 - Navigate to the `otomi-install` directory
-- Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
+- Add your Project ID and Project Region to the `terraform.tfvars`
 - Open a terminal and run the following,
 
 ```bash
@@ -33,6 +32,22 @@ terraform init
 # Deploys and otomi installer job on the GKE cluster
 terraform apply
 ```
+
+Check the logs of the Otomi installer job to see when the installation has finished. The installation can take around 20 to 30 minutes.
+
+First get the credentials of the cluster:
+
+```bash
+gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)
+```
+
+Monitor the logs of the installer job:
+
+```bash
+kubectl logs jobs/quickstart-otomi -n default -f
+```
+
+When the installer is finished, copy the `url` and `admin-password` from the console output. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
 
 ### Some useful GCloud commands
 
@@ -47,9 +62,6 @@ gcloud auth application-default login
 # Enable google services api
 gcloud services enable compute.googleapis.com
 gcloud services enable container.googleapis.com
-
-# Update kubeconfig
-gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)
 
 # In case of `Error: project: required field is not set`
 # export the env variable with the project name

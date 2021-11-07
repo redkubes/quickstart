@@ -7,9 +7,17 @@
 
 ### Set up AKS in Azure
 
+Sign in to Azure:
+
+```bash
+az login
+az account list
+az account set --subscription=<subscription_id>
+```
+
 - Navigate into the `aks` directory
-- Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
-- Open a terminal and run the following,
+- Add your Azure Subscription Id and Tenant ID to the `terraform.tfvars`
+- Open a terminal and run the following:
 
 ```bash
 # Initializes the directory
@@ -17,12 +25,13 @@ terraform init
 # Sets up the AKS cluster
 terraform apply
 ```
-
 ### Install Otomi
 
+When the cluster is available:
+
 - Navigate to the `otomi-install` directory
-- Rename the `terraform.tfvars.example` to `terraform.tfvars` and fill in the fields
-- Open a terminal and run the following,
+- Fill in the  `terraform.tfvars` if not using defaults
+- Open a terminal and run the following:
 
 ```bash
 # Initializes the directory
@@ -31,14 +40,18 @@ terraform init
 terraform apply
 ```
 
-### Access the cluster API
+Check the logs of the Otomi installer job to see when the installation has finished. The installation can take around 20 to 30 minutes.
+
+First get the credentials of the cluster:
 
 ```bash
-az login
-az account list
-az account set --subscription=<subscription_id>
-
-# Update kubeconfig
-az aks get-credentials --resource-group  <resource_group_name> --name <name of the cluster>
-
+az aks get-credentials --resource-group otomi-quickstart-rg --name otomi-quickstart-aks --admin
 ```
+
+Monitor the logs of the installer job:
+
+```bash
+kubectl logs jobs/quickstart-otomi -n default -f
+```
+
+When the installer is finished, copy the `url` and `admin-password` from the console output. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)

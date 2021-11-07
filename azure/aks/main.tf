@@ -5,22 +5,22 @@ provider "azurerm" {
   subscription_id = var.az_subscription_id
 }
 
-resource "azurerm_resource_group" "community-quickstart" {
+resource "azurerm_resource_group" "otomi-quickstart" {
   name     = "${var.resource_group_name}-rg"
   location = var.location
 }
 
-resource "azurerm_virtual_network" "community-quickstart" {
+resource "azurerm_virtual_network" "otomi-quickstart" {
   name                = "${var.resource_group_name}-network"
-  location            = azurerm_resource_group.community-quickstart.location
-  resource_group_name = azurerm_resource_group.community-quickstart.name
+  location            = azurerm_resource_group.otomi-quickstart.location
+  resource_group_name = azurerm_resource_group.otomi-quickstart.name
   address_space       = ["10.1.0.0/16"]
 }
 
-resource "azurerm_subnet" "community-quickstart" {
+resource "azurerm_subnet" "otomi-quickstart" {
   name                 = "${var.resource_group_name}-subnet"
-  virtual_network_name = azurerm_virtual_network.community-quickstart.name
-  resource_group_name  = azurerm_resource_group.community-quickstart.name
+  virtual_network_name = azurerm_virtual_network.otomi-quickstart.name
+  resource_group_name  = azurerm_resource_group.otomi-quickstart.name
   address_prefixes     = ["10.1.0.0/22"]
 
   /* delegation {
@@ -33,10 +33,10 @@ resource "azurerm_subnet" "community-quickstart" {
   }*/
 }
 
-resource "azurerm_kubernetes_cluster" "community-quickstart" {
+resource "azurerm_kubernetes_cluster" "otomi-quickstart" {
   name                = "${var.resource_group_name}-aks"
-  location            = azurerm_resource_group.community-quickstart.location
-  resource_group_name = azurerm_resource_group.community-quickstart.name
+  location            = azurerm_resource_group.otomi-quickstart.location
+  resource_group_name = azurerm_resource_group.otomi-quickstart.name
   dns_prefix          = "${var.resource_group_name}-aks"
 
 
@@ -53,7 +53,7 @@ resource "azurerm_kubernetes_cluster" "community-quickstart" {
 
 
     # Required for advanced networking
-    vnet_subnet_id = azurerm_subnet.community-quickstart.id
+    vnet_subnet_id = azurerm_subnet.otomi-quickstart.id
   }
 
   role_based_access_control {
@@ -71,6 +71,6 @@ resource "azurerm_kubernetes_cluster" "community-quickstart" {
   }
 
   tags = {
-    Environment = "community"
+    Environment = "otomi"
   }
 }
