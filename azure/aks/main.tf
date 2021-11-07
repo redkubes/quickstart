@@ -23,14 +23,6 @@ resource "azurerm_subnet" "otomi-quickstart" {
   resource_group_name  = azurerm_resource_group.otomi-quickstart.name
   address_prefixes     = ["10.1.0.0/22"]
 
-  /* delegation {
-    name = "delegation"
-
-    service_delegation {
-      name    = "Microsoft.ContainerInstance/containerGroups"
-      actions = ["Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action"]
-    }
-  }*/
 }
 
 resource "azurerm_kubernetes_cluster" "otomi-quickstart" {
