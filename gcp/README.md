@@ -7,10 +7,10 @@
 - [GCloud SDK](https://cloud.google.com/sdk/docs/install)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Set up a managed kubernetes cluster on GKE
+### Create a GKE cluster in GCP
 
 - Navigate into the `gke` directory
-- Add your Project ID and Project Region to the `terraform.tfvars`
+- Add your Project ID and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
 
 - Open a terminal and run the following,
 
@@ -23,8 +23,8 @@ terraform apply
 ### Install Otomi
 
 - Navigate to the `otomi-install` directory
-- Add your Project ID and Project Region to the `terraform.tfvars`
-- Open a terminal and run the following,
+- Add your Project ID and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
+- Open a terminal and run the following:
 
 ```bash
 # Initializes the directory
@@ -51,7 +51,7 @@ When the installer is finished, copy the `url` and `admin-password` from the con
 
 ### Some useful GCloud commands
 
-The following commands will be handy in case you have not setup your gcloud sdk
+The following commands will be handy in case you have not setup your gcloud sdk:
 
 ```bash
 # Initialise and authentication

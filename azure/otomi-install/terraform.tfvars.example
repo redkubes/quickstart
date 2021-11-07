@@ -1,0 +1,9 @@
+# Required variables
+# - Check variables.tf for variable type(includes defaults)
+# ==========================================================
+
+# AKS Cluster Name
+aks_cluster_name = "otomi-quickstart-aks"
+
+# Azure Resource Group
+resource_group_name = "otomi-quickstart-rg"

@@ -5,7 +5,7 @@
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Set up AKS in Azure
+### Create an AKS cluster in Azure
 
 Sign in to Azure:
 
@@ -16,7 +16,7 @@ az account set --subscription=<subscription_id>
 ```
 
 - Navigate into the `aks` directory
-- Add your Azure Subscription Id and Tenant ID to the `terraform.tfvars`
+- Add your Azure Subscription Id and Tenant ID to the `terraform.tfvars.example` and rename the file to `terraform.tfvars`
 - Open a terminal and run the following:
 
 ```bash
