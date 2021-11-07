@@ -9,7 +9,7 @@ variable "gke_password" {
 }
 
 variable "gke_num_nodes" {
-  default     = 3
+  default     = 1
   description = "number of gke nodes"
 }
 
@@ -18,11 +18,11 @@ variable "project_id" {
 }
 variable "cluster_name" {
   description = "The name for the GKE cluster"
-  default     = "gke-quickstart"
+  default     = "otomi-quickstart"
 }
 variable "env_name" {
   description = "The environment for the GKE cluster"
-  default     = "poc"
+  default     = "quickstart"
 }
 variable "region" {
   description = "The region to host the cluster in"
