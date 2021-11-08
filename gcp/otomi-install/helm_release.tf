@@ -1,8 +1,8 @@
 data "google_client_config" "provider" {}
 
 data "google_container_cluster" "primary" {
-  name     = "gke-quickstart"
-  location = "europe-west4"
+  name     = var.gke_cluster_name
+  location = var.region
 }
 
 provider "kubernetes" {
