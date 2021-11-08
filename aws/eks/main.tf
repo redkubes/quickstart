@@ -27,7 +27,7 @@ module "eks" {
       instance_types = ["c5.xlarge"]
       capacity_type  = "ON_DEMAND"
       k8s_labels = {
-        role       = "worker"
+        role = "worker"
       }
       additional_tags = {
         nodegroup-role                            = "worker"
@@ -43,15 +43,15 @@ module "eks" {
   map_roles    = var.aws_roles
   map_users    = var.aws_users
   map_accounts = var.aws_accounts
-  
+
   depends_on = [
     aws_iam_role_policy_attachment.node-group-AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.node-group-AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.node-group-AmazonEC2ContainerRegistryReadOnly,
-    aws_iam_role_policy_attachment.node-group-ElasticLoadBalancingFullAccess
+    aws_iam_role_policy_attachment.node-group-ElasticLoadBalancingFullAccess,
+    aws_iam_role_policy_attachment.cluster_autoscaler
   ]
   tags = {
-    otomi.quickstart                                 = local.name
     "k8s.io/cluster-autoscaler/enabled"       = "true"
     "k8s.io/cluster-autoscaler/${local.name}" = "owned"
   }
@@ -92,16 +92,20 @@ module "vpc" {
   enable_dns_hostnames = true
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/${local.name}" = "shared"
-    "kubernetes.io/role/elb"              = "1"
+    "kubernetes.io/cluster/${local.name}"     = "shared"
+    "kubernetes.io/role/elb"                  = "1"
+    "k8s.io/cluster-autoscaler/enabled"       = "true"
+    "k8s.io/cluster-autoscaler/${local.name}" = "owned"
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/${local.name}" = "shared"
-    "kubernetes.io/role/internal-elb"     = "1"
+    "kubernetes.io/cluster/${local.name}"     = "shared"
+    "kubernetes.io/role/internal-elb"         = "1"
+    "k8s.io/cluster-autoscaler/enabled"       = "true"
+    "k8s.io/cluster-autoscaler/${local.name}" = "owned"
   }
 
   tags = {
-    community       = local.name
+    community = local.name
   }
 }

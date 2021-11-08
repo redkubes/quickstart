@@ -7,13 +7,6 @@ locals {
   cluster_version = "1.20"
 }
 
-# Doesnt have cluster_id object
-# data "terraform_remote_state" "eks" {
-#   backend = "local"
-#   config = {
-#     path = "../eks/terraform.tfstate"
-#   }
-# }
 
 # Retrieve EKS cluster configuration
 data "aws_eks_cluster" "cluster" {

@@ -15,12 +15,9 @@ Quickstarts are available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
+- [**Amazon Web Services** (`aws`)](./aws)
 
 The Quickstart will create a managed Kubernetes cluster (AKS/GKE/EKS) and install Otomi without external dependencies like DNS, Active Directory or KMS. For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
-
-We will soon make a quickstart available for:
-
-- [**Amazon Web Services** (`aws`)](./aws)
 
 ### Requirements
 
