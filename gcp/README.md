@@ -20,10 +20,11 @@ terraform init
 # Sets up the GKE cluster
 terraform apply
 ```
+
 ### Install Otomi
 
 - Navigate to the `otomi-install` directory
-- Add your Project ID and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
+- Add your GKE Cluster Name and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
 - Open a terminal and run the following:
 
 ```bash
