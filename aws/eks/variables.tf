@@ -73,3 +73,11 @@ variable "aws_users" {
     },
   ]
 }
+
+variable "eks_cluster_name" {
+  default = "otomi-quickstart-eks"
+}
+
+variable "environment" {
+  default = "community"
+}
