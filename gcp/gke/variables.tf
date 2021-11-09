@@ -1,18 +1,3 @@
-variable "gke_username" {
-  default     = ""
-  description = "gke username"
-}
-
-variable "gke_password" {
-  default     = ""
-  description = "gke password"
-}
-
-variable "gke_num_nodes" {
-  default     = 1
-  description = "number of gke nodes"
-}
-
 variable "project_id" {
   description = "The project ID to host the cluster in"
 }
@@ -27,4 +12,13 @@ variable "env_name" {
 variable "region" {
   description = "The region to host the cluster in"
   default     = "europe-west4"
+}
+
+# By default we are creating a `regional cluster`
+# A regional cluster in the europe-west4 region creates replicas of the control plane and nodes in three europe-west4 zones: europe-west4-a, europe-west4-b, and europe-west4-c
+# Example: Adding `gke_num_nodes_per_zone`: 3 will create 9 nodes (three across each zone)
+# Tip: stick to default for evaluation purpose
+variable "gke_num_nodes_per_zone" {
+  default     = 1
+  description = "number of gke nodes per zone"
 }

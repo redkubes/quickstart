@@ -1,4 +1,8 @@
 # GKE cluster
+
+# By default we are creating a `regional cluster`
+# A regional cluster in the europe-west4 region creates replicas of the control plane and nodes in three europe-west4 zones: europe-west4-a, europe-west4-b, and europe-west4-c
+# Fore more details: https://cloud.google.com/kubernetes-engine/docs/concepts/regional-clusters
 resource "google_container_cluster" "primary" {
   name     = var.cluster_name
   location = var.region
@@ -18,7 +22,7 @@ resource "google_container_node_pool" "primary_nodes" {
   name       = "${google_container_cluster.primary.name}-node-pool"
   location   = var.region
   cluster    = google_container_cluster.primary.name
-  node_count = var.gke_num_nodes
+  node_count = var.gke_num_nodes_per_zone
 
   node_config {
     oauth_scopes = [
@@ -39,23 +43,3 @@ resource "google_container_node_pool" "primary_nodes" {
     }
   }
 }
-
-
-# # Kubernetes provider
-# # The Terraform Kubernetes Provider configuration below is used as a learning reference only. 
-# # It references the variables and resources provisioned in this file. 
-# # We recommend you put this in another file -- so you can have a more modular configuration.
-# # https://learn.hashicorp.com/terraform/kubernetes/provision-gke-cluster#optional-configure-terraform-kubernetes-provider
-# # To learn how to schedule deployments and services using the provider, go here: https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider.
-
-# provider "kubernetes" {
-#   load_config_file = "false"
-
-#   host     = google_container_cluster.primary.endpoint
-#   username = var.gke_username
-#   password = var.gke_password
-
-#   client_certificate     = google_container_cluster.primary.master_auth.0.client_certificate
-#   client_key             = google_container_cluster.primary.master_auth.0.client_key
-#   cluster_ca_certificate = google_container_cluster.primary.master_auth.0.cluster_ca_certificate
-# }
