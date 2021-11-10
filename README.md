@@ -31,13 +31,13 @@ The quickstart contains different Terraform workflows for each cloud provider re
 quickstart
 ├── aws
 │   ├── eks             # Terraform workflow for installing EKS cluster
-│   └── otomi-install   # Terraform workflow installing otomi on EKS cluster
+│   └── otomi-install   # Terraform workflow for installing otomi on EKS cluster
 ├── azure
 │   ├── aks             # Terraform workflow for installing AKS cluster
-│   └── otomi-install   # Terraform workflow installing otomi on AKS cluster
+│   └── otomi-install   # Terraform workflow for installing otomi on AKS cluster
 └── gcp
     ├── gke             # Terraform workflow for installing GKE cluster
-    └── otomi-install   # Terraform workflow installing otomi on GKE cluster
+    └── otomi-install   # Terraform workflow for installing otomi on GKE cluster
 ```
 
 To deploy a quickstart, perform the following steps:
