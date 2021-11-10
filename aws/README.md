@@ -6,7 +6,8 @@
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
 ### CLI cheat sheet
-```
+
+```bash
 # Obtain account
 aws sts get-caller-identity
 # Obtain username and userarn
@@ -16,10 +17,11 @@ aws iam list-roles
 # Obtain groups
 aws iam list-groups
 ```
+
 ### Set up a managed kubernetes cluster on EKS
 
 - Navigate into the `eks` directory
-- Add your aws credentials to the `terraform.tfvars.example` and rename the file to `terraform.tfvars`
+- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters
 - Open a terminal and run the following:
 
 ```bash
@@ -32,7 +34,7 @@ terraform apply
 ### Install Otomi
 
 - Navigate to the `otomi-install` directory
-- Add your `aws_region` to the `terraform.tfvars.example` and rename the file to `terraform.tfvars`
+- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters
 - Open a terminal and run the following:
 
 ```bash
@@ -59,4 +61,6 @@ Monitor the logs of the installer job:
 kubectl logs jobs/quickstart-otomi -n default -f
 ```
 
-When the installer is finished, copy the `url` and `admin-password` from the console output. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
+When the installer is finished, copy the `url` and `admin-password` from the console output.
+
+Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)

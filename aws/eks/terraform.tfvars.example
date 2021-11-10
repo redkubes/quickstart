@@ -4,22 +4,34 @@
 # ==========================================================
 
 # AWS Accounts
-aws_accounts = ""
+aws_accounts = ["222222222222"]
 
 # AWS IAM Roles
-aws_roles = ""
+aws_roles = [
+  {
+    rolearn  = "arn:aws:iam::222222222222:user1/username"
+    username = "username"
+    groups   = ["Admins"]
+  },
+]
 
 # AWS IAM Users
-aws_users = ""
+aws_users = [
+  {
+    rolearn  = "arn:aws:iam::222222222222:user1/username"
+    username = "username"
+    groups   = ["Admin"]
+  },
+]
+
+# EKS Cluster Name
+cluster_name = ""
 
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
 
-# AWS region for all resources
+# AWS region for all resources(default: eu-central-1)
 # aws_region = ""
 
-# EC2 instance size of all created instances
-# instance_type = ""
-
-# Kubernetes version used for creating workload cluster
+# Kubernetes version used for creating workload cluster(default: 1.20)
 # cluster_version = ""
