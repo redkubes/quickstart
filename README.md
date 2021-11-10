@@ -26,7 +26,7 @@ The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Oto
 
 ### Deploy
 
-The quickstart contains different Terraform workflows for each cloud provider respectively: that are represented by the following directory structure: 
+The quickstart contains different Terraform workflows for each cloud provider respectively:
 ```
 quickstart
 ├── aws
