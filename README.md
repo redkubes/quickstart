@@ -1,6 +1,6 @@
 # Otomi Quickstarts
 
-Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) in your public cloud of choice or install Otomi locally on your machine using Minikube.
+Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) in public cloud of your choice.
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -11,39 +11,57 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ## Public cloud providers
 
-Quickstarts are available for:
+The quickstart is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 - [**Amazon Web Services** (`aws`)](./aws)
 
-The Quickstart will create a managed Kubernetes cluster (AKS/GKE/EKS) and install Otomi without external dependencies like DNS, Active Directory or KMS. For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
 
 ### Requirements
 
-- Terraform >=0.14.0
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
 - Credentials for the cloud provider used for the quickstart
 
 ### Deploy
 
+The quickstart contains different Terraform workflows for each cloud provider respectively:
+```
+quickstart
+├── aws
+│   ├── eks             # Terraform workflow for installing EKS cluster
+│   └── otomi-install   # Terraform workflow for installing otomi on EKS cluster
+├── azure
+│   ├── aks             # Terraform workflow for installing AKS cluster
+│   └── otomi-install   # Terraform workflow for installing otomi on AKS cluster
+└── gcp
+    ├── gke             # Terraform workflow for installing GKE cluster
+    └── otomi-install   # Terraform workflow for installing otomi on GKE cluster
+```
+
 To deploy a quickstart, perform the following steps:
 
-1. Clone or download this repository
-2. Choose a cloud provider and navigate into `<cloud-provider>/<managed-k8s>` folder
-3. Add the required information to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
-4. Run `terraform init`
-5. Run `terraform apply`
+1. Navigate to `<cloud-provider>/<managed-k8s>` folder
+2. Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters 
+3. Run `terraform init`
+4. Run `terraform apply`
 
 Once the cluster is up and running,
 
-1. Navigate to `otomi-install` folder
-2. Add the required information to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
+1. Navigate to `<cloud-provider>/otomi-install` folder
+2. Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters 
 3. Run `terraform init`
 4. Run `terraform apply`
 
 ### Next Steps
 
 1. Monitor the logs of the installer job
+
+```
+# Obtain kubernetes cluster name 
+terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
+```
 
 ```bash
 kubectl logs jobs/quickstart-otomi -n default -f
