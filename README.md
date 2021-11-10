@@ -21,8 +21,8 @@ The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Oto
 
 ### Requirements
 
-- Terraform >=0.14.0 (installation guide: [link](https://learn.hashicorp.com/tutorials/terraform/install-cli))
-- Credentials for the cloud provider used for the quick start
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
+- Credentials for the cloud provider used for the quickstart
 
 ### Deploy
 
