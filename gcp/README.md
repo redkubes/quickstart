@@ -7,7 +7,7 @@
 - [GCloud SDK](https://cloud.google.com/sdk/docs/install)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Create a GKE cluster in GCP
+### Set up a managed kubernetes cluster on GKE
 
 - Navigate into the `gke` directory
 - Add your Project ID and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`

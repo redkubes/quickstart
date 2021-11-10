@@ -5,11 +5,10 @@
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Create an AKS cluster in Azure
-
-Sign in to Azure:
+### Set up a managed kubernetes cluster on AKS
 
 ```bash
+# Sign in to Azure
 az login
 az account list
 az account set --subscription=<subscription_id>
