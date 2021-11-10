@@ -15,8 +15,6 @@ aws iam get-user
 aws iam list-roles
 # Obtain groups
 aws iam list-groups
-# Obtain kubernetes cluster name 
-terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
 ```
 ### Set up a managed kubernetes cluster on EKS
 
@@ -49,6 +47,9 @@ Check the logs of the Otomi installer job to see when the installation has finis
 First get the credentials of the cluster:
 
 ```bash
+# Obtain kubernetes cluster name 
+terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
+# Update your kubeconfig
 aws eks update-kubeconfig --name <cluster_name>
 ```
 

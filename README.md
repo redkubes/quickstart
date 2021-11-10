@@ -26,24 +26,42 @@ The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Oto
 
 ### Deploy
 
+The quickstart contains different Terraform workflows for each cloud provider respectively: that are represented by the following directory structure: 
+```
+quickstart
+├── aws
+│   ├── eks             # Terraform workflow for installing EKS cluster
+│   └── otomi-install   # Terraform workflow installing otomi on EKS cluster
+├── azure
+│   ├── aks             # Terraform workflow for installing AKS cluster
+│   └── otomi-install   # Terraform workflow installing otomi on AKS cluster
+└── gcp
+    ├── gke             # Terraform workflow for installing GKE cluster
+    └── otomi-install   # Terraform workflow installing otomi on GKE cluster
+```
+
 To deploy a quickstart, perform the following steps:
 
-1. Clone this repository
-2. Choose a cloud provider and navigate into `<cloud-provider>/<managed-k8s>` folder (e.g.: cd aws/eks)
-3. Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters 
-4. Run `terraform init`
-5. Run `terraform apply`
+1. Navigate to `<cloud-provider>/<managed-k8s>` folder
+2. Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters 
+3. Run `terraform init`
+4. Run `terraform apply`
 
 Once the cluster is up and running,
 
-1. Navigate to `otomi-install` folder
-2. Add the required information to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
+1. Navigate to `<cloud-provider>/otomi-install` folder
+2. Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters 
 3. Run `terraform init`
 4. Run `terraform apply`
 
 ### Next Steps
 
 1. Monitor the logs of the installer job
+
+```
+# Obtain kubernetes cluster name 
+terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
+```
 
 ```bash
 kubectl logs jobs/quickstart-otomi -n default -f
