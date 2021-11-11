@@ -50,6 +50,7 @@ variable "aws_region" {
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
+  default = "otomi-quickstart"
 }
 
 variable "cluster_version" {

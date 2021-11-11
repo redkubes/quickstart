@@ -20,15 +20,15 @@ aws_users = [
   {
     rolearn  = "arn:aws:iam::222222222222:user1/username"
     username = "username"
-    groups   = ["Admin"]
+    groups   = ["Admins"]
   },
 ]
 
-# EKS Cluster Name
-cluster_name = ""
-
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
+
+# EKS Cluster Name (default: otomi-quickstart)
+# cluster_name = ""
 
 # AWS region for all resources(default: eu-central-1)
 # aws_region = ""
