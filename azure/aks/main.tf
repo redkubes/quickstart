@@ -6,7 +6,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "otomi-quickstart" {
-  name     = "${var.resource_group_name}-rg"
+  name     = var.resource_group_name
   location = var.location
 }
 
@@ -26,10 +26,10 @@ resource "azurerm_subnet" "otomi-quickstart" {
 }
 
 resource "azurerm_kubernetes_cluster" "otomi-quickstart" {
-  name                = "${var.resource_group_name}-aks"
+  name                = var.cluster_name
   location            = azurerm_resource_group.otomi-quickstart.location
   resource_group_name = azurerm_resource_group.otomi-quickstart.name
-  dns_prefix          = "${var.resource_group_name}-aks"
+  dns_prefix          = var.cluster_name
 
 
   default_node_pool {

@@ -5,7 +5,7 @@
 - [AWS CLI](https://aws.amazon.com/cli/)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### CLI cheat sheet
+#### AWS CLI Cheat Sheet
 
 ```bash
 # Obtain account
@@ -17,6 +17,8 @@ aws iam list-roles
 # Obtain groups
 aws iam list-groups
 ```
+
+---
 
 ### Set up a managed kubernetes cluster on EKS
 
@@ -30,6 +32,8 @@ terraform init
 # Sets up the EKS cluster
 terraform apply
 ```
+
+---
 
 ### Install Otomi
 
@@ -49,9 +53,8 @@ Check the logs of the Otomi installer job to see when the installation has finis
 First get the credentials of the cluster:
 
 ```bash
-# Obtain kubernetes cluster name 
-terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
 # Update your kubeconfig
+# Default: aws eks update-kubeconfig --name otomi-quickstart
 aws eks update-kubeconfig --name <cluster_name>
 ```
 
@@ -63,4 +66,4 @@ kubectl logs jobs/quickstart-otomi -n default -f
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
-Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
+Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)

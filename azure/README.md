@@ -5,14 +5,20 @@
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
-### Set up a managed kubernetes cluster on AKS
+#### Azure CLI Cheat Sheet
 
 ```bash
 # Sign in to Azure
 az login
+# Get a list of subscriptions for the logged in account
 az account list
+# Set subscription
 az account set --subscription=<subscription_id>
 ```
+
+---
+
+### Set up a managed kubernetes cluster on AKS
 
 - Navigate into the `aks` directory
 - Add your Azure Subscription Id and Tenant ID to the `terraform.tfvars.example` and rename the file to `terraform.tfvars`
@@ -24,6 +30,9 @@ terraform init
 # Sets up the AKS cluster
 terraform apply
 ```
+
+---
+
 ### Install Otomi
 
 When the cluster is available:
@@ -44,7 +53,8 @@ Check the logs of the Otomi installer job to see when the installation has finis
 First get the credentials of the cluster:
 
 ```bash
-az aks get-credentials --resource-group otomi-quickstart-rg --name otomi-quickstart-aks --admin
+# Default: az aks get-credentials --resource-group otomi-quickstart-rg --name otomi-quickstart --admin
+az aks get-credentials --resource-group <resource-group-name> --name <cluster-name>
 ```
 
 Monitor the logs of the installer job:
@@ -53,4 +63,6 @@ Monitor the logs of the installer job:
 kubectl logs jobs/quickstart-otomi -n default -f
 ```
 
-When the installer is finished, copy the `url` and `admin-password` from the console output. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
+When the installer is finished, copy the `url` and `admin-password` from the console output.
+
+Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
