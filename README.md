@@ -65,11 +65,6 @@ Once the cluster is up and running,
 
 1. Monitor the logs of the installer job
 
-```
-# Obtain kubernetes cluster name 
-terraform show -json | jq '.values.outputs.node_groups.value.default.cluster_name' -r
-```
-
 ```bash
 kubectl logs jobs/quickstart-otomi -n default -f
 ```
