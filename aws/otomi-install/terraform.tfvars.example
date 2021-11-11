@@ -3,4 +3,14 @@
 # - Check variables.tf for variable type(includes defaults)
 # ==========================================================
 
-aws_region = ""
+# Optional variables, uncomment to customize the quickstart
+# ----------------------------------------------------------
+
+# EKS Cluster Name(default: otomi-quickstart)
+# cluster_name = ""
+
+# AWS region for all resources(default: eu-central-1)
+# aws_region = ""
+
+# Kubernetes version used for creating workload cluster(default: 1.20)
+# cluster_version = ""

@@ -2,18 +2,11 @@ provider "aws" {
   region = var.aws_region
 }
 
-locals {
-  cluster_id      = "eks-otomi-quickstart"
-  cluster_version = "1.20"
-}
-
 
 # Retrieve EKS cluster configuration
 data "aws_eks_cluster" "cluster" {
-  # name = data.terraform_remote_state.eks.outputs.cluster_id
-  name = local.cluster_id
+  name = var.cluster_name
 }
-
 
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
@@ -24,4 +17,3 @@ provider "kubernetes" {
     command     = "aws"
   }
 }
-
