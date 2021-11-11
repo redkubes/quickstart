@@ -4,7 +4,7 @@
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = local.name
+  cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
 
   vpc_id  = module.vpc.vpc_id
@@ -30,9 +30,9 @@ module "eks" {
         role = "worker"
       }
       additional_tags = {
-        nodegroup-role                            = "worker"
-        "k8s.io/cluster-autoscaler/enabled"       = "true"
-        "k8s.io/cluster-autoscaler/${local.name}" = "owned"
+        nodegroup-role                                  = "worker"
+        "k8s.io/cluster-autoscaler/enabled"             = "true"
+        "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
       }
       update_config = {
         max_unavailable_percentage = 50
@@ -52,8 +52,8 @@ module "eks" {
     aws_iam_role_policy_attachment.cluster_autoscaler
   ]
   tags = {
-    "k8s.io/cluster-autoscaler/enabled"       = "true"
-    "k8s.io/cluster-autoscaler/${local.name}" = "owned"
+    "k8s.io/cluster-autoscaler/enabled"             = "true"
+    "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
   }
 }
 
@@ -82,7 +82,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"
 
-  name                 = local.name
+  name                 = var.cluster_name
   cidr                 = "10.0.0.0/16"
   azs                  = data.aws_availability_zones.available.names
   private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
@@ -92,20 +92,20 @@ module "vpc" {
   enable_dns_hostnames = true
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/${local.name}"     = "shared"
-    "kubernetes.io/role/elb"                  = "1"
-    "k8s.io/cluster-autoscaler/enabled"       = "true"
-    "k8s.io/cluster-autoscaler/${local.name}" = "owned"
+    "kubernetes.io/cluster/${var.cluster_name}"     = "shared"
+    "kubernetes.io/role/elb"                        = "1"
+    "k8s.io/cluster-autoscaler/enabled"             = "true"
+    "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/${local.name}"     = "shared"
-    "kubernetes.io/role/internal-elb"         = "1"
-    "k8s.io/cluster-autoscaler/enabled"       = "true"
-    "k8s.io/cluster-autoscaler/${local.name}" = "owned"
+    "kubernetes.io/cluster/${var.cluster_name}"     = "shared"
+    "kubernetes.io/role/internal-elb"               = "1"
+    "k8s.io/cluster-autoscaler/enabled"             = "true"
+    "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
   }
 
   tags = {
-    community = local.name
+    community = var.cluster_name
   }
 }

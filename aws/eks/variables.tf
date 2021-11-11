@@ -1,36 +1,4 @@
 
-locals {
-  name            = "eks-otomi-quickstart"
-  cluster_version = "1.20"
-}
-
-# variable "aws_access_key" {
-#   type        = string
-#   description = "AWS access key used to create infrastructure"
-# }
-
-# variable "aws_secret_key" {
-#   type        = string
-#   description = "AWS secret key used to create AWS infrastructure"
-# }
-
-# variable "aws_session_token" {
-#   type        = string
-#   description = "AWS session token used to create AWS infrastructure"
-#   default     = ""
-# }
-
-variable "aws_region" {
-  type        = string
-  description = "AWS region used for all resources"
-  default     = "eu-central-1"
-}
-
-variable "cluster_version" {
-  type        = string
-  description = "AWS EKS cluster version"
-  default     = "1.20"
-}
 
 variable "aws_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."
@@ -74,8 +42,21 @@ variable "aws_users" {
   ]
 }
 
-variable "eks_cluster_name" {
-  default = "otomi-quickstart-eks"
+variable "aws_region" {
+  type        = string
+  description = "AWS region used for all resources"
+  default     = "eu-central-1"
+}
+variable "cluster_name" {
+  type        = string
+  description = "Name of the EKS cluster"
+  default = "otomi-quickstart"
+}
+
+variable "cluster_version" {
+  type        = string
+  description = "AWS EKS cluster version"
+  default     = "1.20"
 }
 
 variable "environment" {

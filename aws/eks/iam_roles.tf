@@ -1,5 +1,5 @@
 resource "aws_iam_role" "eks_nodes" {
-  name               = "${var.eks_cluster_name}-worker-${var.environment}"
+  name               = "${var.cluster_name}-worker-${var.environment}"
   assume_role_policy = data.aws_iam_policy_document.assume_workers.json
 }
 data "aws_iam_policy_document" "assume_workers" {
@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "cluster_autoscaler" {
   role       = aws_iam_role.eks_nodes.name
 }
 resource "aws_iam_policy" "cluster_autoscaler_policy" {
-  name        = "ClusterAutoScaler"
+  name        = "${var.cluster_name}-cluster_autoscaler"
   description = "Give the worker node running the Cluster Autoscaler access to required resources and actions"
   policy      = <<EOF
 {
