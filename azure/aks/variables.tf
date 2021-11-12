@@ -8,10 +8,15 @@ variable "az_tenant_id" {
 
 variable "resource_group_name" {
   description = "Name of the resource group"
-  default     = "otomi-quickstart"
+  type        = string
+  default     = "otomi-quickstart-rg"
 }
 
 variable "location" {
   description = "Location of the resources"
-  default     = "West Europe"
+}
+
+variable "cluster_name" {
+  type    = string
+  default = "otomi-quickstart"
 }

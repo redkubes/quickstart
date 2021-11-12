@@ -1,9 +1,13 @@
 # Required variables
+# - Fill in before beginning quickstart
 # - Check variables.tf for variable type(includes defaults)
 # ==========================================================
 
-# AKS Cluster Name
-aks_cluster_name = "otomi-quickstart-aks"
 
-# Azure Resource Group
-resource_group_name = "otomi-quickstart-rg"
+# Optional variables, uncomment to customize the quickstart
+# ----------------------------------------------------------
+# Azure Resource Group(default: otomi-quickstart-rg)
+# resource_group_name = ""
+
+# AKS Cluster Name (default: otomi-quickstart)
+# cluster_name = ""

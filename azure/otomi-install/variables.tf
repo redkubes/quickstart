@@ -1,6 +1,6 @@
-variable "aks_cluster_name" {
+variable "cluster_name" {
   type    = string
-  default = "otomi-quickstart-aks"
+  default = "otomi-quickstart"
 }
 
 variable "resource_group_name" {
