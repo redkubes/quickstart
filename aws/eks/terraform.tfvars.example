@@ -11,7 +11,7 @@ aws_profile = "default"
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
 
-# AWS IAM Roles
+# AWS IAM Roles - this will be used later to decide who can access the cluster
 # aws_roles = [
 #   {
 #     rolearn  = "arn:aws:iam::222222222222:user1/username"
@@ -20,7 +20,7 @@ aws_profile = "default"
 #   },
 # ]
 
-# AWS IAM Users
+# AWS IAM Users - this will be used later to decide who can access the cluster
 # aws_users = [
 #   {
 #     rolearn  = "arn:aws:iam::222222222222:user1/username"
