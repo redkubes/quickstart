@@ -1,4 +1,8 @@
-
+variable "aws_profile" {
+  description = "If you use another profiles besides [default], then also set this tfvar to the other profile."
+  type = string
+  default = "default"
+}
 
 variable "aws_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."
