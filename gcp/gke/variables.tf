@@ -4,11 +4,17 @@ variable "project_id" {
 variable "cluster_name" {
   description = "The name for the GKE cluster"
   default     = "otomi-quickstart"
+  validation {
+    condition     = can(regex("^(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)$", var.cluster_name))
+    error_message = "The cluster_name value must be lowercase and cannot start or end with non-alphanumeric character."
+  }
 }
 variable "env_name" {
   description = "The environment for the GKE cluster"
   default     = "quickstart"
 }
+
+
 variable "region" {
   description = "The region to host the cluster in"
   default     = "europe-west4"
