@@ -6,7 +6,7 @@ variable "cluster_name" {
   default     = "otomi-quickstart"
   validation {
     condition     = can(regex("^(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)$", var.cluster_name))
-    error_message = "The cluster_name value must match regex pattern."
+    error_message = "The cluster_name value must be lowercase and cannot start or end with non-alfanumerical character."
   }
 }
 variable "env_name" {
