@@ -18,10 +18,6 @@ gcloud auth application-default login
 # Enable google services api
 gcloud services enable compute.googleapis.com
 gcloud services enable container.googleapis.com
-
-# In case of `Error: project: required field is not set`
-# export the env variable with the project name
-export GOOGLE_PROJECT=YOUR_PROJECT_NAME
 ```
 
 ---

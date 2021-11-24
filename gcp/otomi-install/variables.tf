@@ -1,3 +1,7 @@
+variable "project_id" {
+  description = "The gcloud project ID"
+  type        = string
+}
 variable "gke_cluster_name" {
   description = "The name for the GKE cluster"
   type        = string
