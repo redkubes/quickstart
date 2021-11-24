@@ -3,29 +3,31 @@
 # - Check variables.tf for variable type(includes defaults)
 # ==========================================================
 
-# AWS Accounts
+# AWS Accounts - this will be used later to decide who can access the cluster
 aws_accounts = ["222222222222"]
 
-# AWS IAM Roles
-aws_roles = [
-  {
-    rolearn  = "arn:aws:iam::222222222222:user1/username"
-    username = "username"
-    groups   = ["Admins"]
-  },
-]
-
-# AWS IAM Users
-aws_users = [
-  {
-    rolearn  = "arn:aws:iam::222222222222:user1/username"
-    username = "username"
-    groups   = ["Admins"]
-  },
-]
+aws_profile = "default"
 
 # Optional variables, uncomment to customize the quickstart
 # ----------------------------------------------------------
+
+# AWS IAM Roles - this will be used later to decide who can access the cluster
+# aws_roles = [
+#   {
+#     rolearn  = "arn:aws:iam::222222222222:user1/username"
+#     username = "username"
+#     groups   = ["Admins"]
+#   },
+# ]
+
+# AWS IAM Users - this will be used later to decide who can access the cluster
+# aws_users = [
+#   {
+#     rolearn  = "arn:aws:iam::222222222222:user1/username"
+#     username = "username"
+#     groups   = ["Admins"]
+#   },
+# ]
 
 # EKS Cluster Name (default: otomi-quickstart)
 # cluster_name = ""

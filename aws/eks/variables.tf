@@ -1,4 +1,8 @@
-
+variable "aws_profile" {
+  description = "Set this variable if you use another profile besides the default awscli profile called 'default'."
+  type = string
+  default = "default"
+}
 
 variable "aws_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."

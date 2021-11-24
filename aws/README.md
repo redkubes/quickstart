@@ -5,6 +5,12 @@
 - [AWS CLI](https://aws.amazon.com/cli/)
 - [Terraform](https://cloud.google.com/sdk/docs/install)
 
+### Additional resources
+
+- If you use VSCode, hover over variables to see the description/type in .tf and .tfvars files with the [Terraform extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform).
+- [Official module documentation]()
+- [How to setup awsci and terraform](https://learn.hashicorp.com/tutorials/terraform/aws-build)
+
 #### AWS CLI Cheat Sheet
 
 ```bash
@@ -27,6 +33,7 @@ aws iam list-groups
 - Open a terminal and run the following:
 
 ```bash
+cd aws/eks # if you haven't done so already
 # Initializes the directory
 terraform init
 # Sets up the EKS cluster
@@ -35,13 +42,14 @@ terraform apply
 
 ---
 
-### Install Otomi
+### Install Otomi on EKS
 
 - Navigate to the `otomi-install` directory
 - Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters
 - Open a terminal and run the following:
 
 ```bash
+cd aws/otomi-install # if you haven't done so already
 # Initializes the directory
 terraform init
 # Deploys and otomi installer job on the EKS cluster
