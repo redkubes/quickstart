@@ -1,6 +1,6 @@
-# Otomi Quickstarts
+# Otomi Quickstart
 
-Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) in public cloud of your choice.
+Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the public cloud of your choice.
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -84,7 +84,3 @@ Make sure you tear down any resources you provisioned manually before running th
 terraform destroy -auto-approve
 # This destroys all the resources without prompting confirmation
 ```
-
-## Local cluster using Minikube (Coming Soon)
-
-Next to the quickstarts for running Otomi in your public cloud of choice, you will soon also be able to run Otomi locally on your machine using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
