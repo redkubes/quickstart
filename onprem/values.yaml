@@ -3,7 +3,6 @@
 cluster:
   provider: onprem # do not modify
   domainSuffix: 127.0.0.1.nip.io # depends on the `minikube tunnel` address
-  k8sContext: minikube # if using minikube
   owner: me 
   k8sVersion: '1.19' 
 

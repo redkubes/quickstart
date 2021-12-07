@@ -1,7 +1,7 @@
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Instructions](#instructions)
+  - [Instructions](#instructions)
   - [Requirements](#requirements)
   - [Configure k8s cluster](#configure-k8s-cluster)
   - [Install Otomi](#install-otomi)
@@ -29,7 +29,7 @@ We assume you are able to configure a k8s cluster with the aforementioned specif
 We've prepared a walkthrough for [minikube](https://minikube.sigs.k8s.io) if you would like a basic configuration and have no specific requirements for the environment (note that this is a single node configuration).
 
 <details>
-  <summary>(Optional) Minikube configuration</summary>
+  <summary>Click here to see the (optional) Minikube configuration</summary>
   
 1. Install [`minikube`](https://minikube.sigs.k8s.io/docs/start/)
 2. Install [`docker`](https://docs.docker.com/get-docker/)
