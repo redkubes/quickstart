@@ -6,15 +6,15 @@
   - [Configure k8s cluster](#configure-k8s-cluster)
   - [Install Otomi](#install-otomi)
 
-# Instructions
+## Instructions
 
-- Please be advised to run Otomi on a sufficiently powerful machine or cluster, ie.: 12+ CPU, 32GB+ RAM, depending on the configuration. 
-- It is not recommended to run it on a laptop because of the resource utilization. 
-- We recommend a Linux distro like Ubuntu for the k8s host.
+- Please be advised to run Otomi on a sufficiently powerful machine or cluster, ie.: 12+ CPU, 32GB+ RAM, depending on the configuration
+- It is not recommended to run it on a laptop because of resource utilization
+- We recommend a Linux distribution like Ubuntu for the k8s host
 
 ## Requirements
 
-- Install `helm`. Official documentation: https://helm.bash/docs/intro/install/.
+- Install [`helm`](https://helm.sh/docs/intro/install/)
 
 ## Configure k8s cluster
 
@@ -31,8 +31,8 @@ We've prepared a walkthrough for [minikube](https://minikube.sigs.k8s.io) if you
 <details>
   <summary>(Optional) Minikube configuration</summary>
   
-1. Install `minikube`. Official documentation: https://minikube.sigs.k8s.io/docs/start/.
-2. Install `docker`. Official documentation: https://docs.docker.com/get-docker/.
+1. Install [`minikube`](https://minikube.sigs.k8s.io/docs/start/)
+2. Install [`docker`](https://docs.docker.com/get-docker/)
 
 3. Setup a single node Minikube k8s cluster:
 
@@ -49,14 +49,14 @@ minikube start --driver docker --network minikube "--kubernetes-version=v1.$mino
 
 4. Inspect `onprem/values.yaml`. Ensure access to this file by either cloning this repository, downloading the file from Github, or copying the contents to a file named `values.yaml` (optionally substitute the file name in the following steps).
 
-5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run (_otherwise `helm install` will NOT continue_): 
+5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run (_otherwise `helm install` will NOT continue_):
 
 ```bash
 minikube tunnel & # will expose something like 127.0.0.1.nip.io, check `kubectl get ingress -A -o wide`
-``` 
+```
 
 </details>
-&nbsp; 
+&nbsp;
 
 ## Install Otomi
 
@@ -76,4 +76,4 @@ kubectl logs jobs/otomi -n default -f
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
-Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
+Follow the post-installation steps [here.](https://otomi.io/docs/installation/post-install)
