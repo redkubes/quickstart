@@ -1,3 +1,6 @@
+# Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Instructions](#instructions)
   - [Requirements](#requirements)
   - [Configure k8s cluster](#configure-k8s-cluster)
@@ -46,7 +49,7 @@ minikube start --driver docker --network minikube "--kubernetes-version=v1.$mino
 
 4. Inspect `onprem/values.yaml`. Ensure access to this file by either cloning this repository, downloading the file from Github, or copying the contents to a file named `values.yaml` (or substitute the file name in the following steps).
 
-5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run: 
+5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run (_otherwise `helm install` will NOT continue_): 
 
 ```bash
 minikube tunnel & # will expose something like 127.0.0.1.nip.io, check `kubectl get ingress -A -o wide`
@@ -57,7 +60,7 @@ minikube tunnel & # will expose something like 127.0.0.1.nip.io, check `kubectl 
 
 ## Install Otomi
 
-Run the following command:
+Run the following command to install Otomi:
 
 ```bash
 helm repo add otomi https://otomi.io/otomi-core
