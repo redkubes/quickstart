@@ -47,7 +47,7 @@ enable_listen_addr="--listen-address=0.0.0.0"
 minikube start --driver docker --network minikube "--kubernetes-version=v1.$minor.$patch" --cpus=max --memory=max "$enable_listen_addr"
 ```
 
-4. Inspect `onprem/values.yaml`. Ensure access to this file by either cloning this repository, downloading the file from Github, or copying the contents to a file named `values.yaml` (or substitute the file name in the following steps).
+4. Inspect `onprem/values.yaml`. Ensure access to this file by either cloning this repository, downloading the file from Github, or copying the contents to a file named `values.yaml` (optionally substitute the file name in the following steps).
 
 5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run (_otherwise `helm install` will NOT continue_): 
 
