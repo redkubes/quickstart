@@ -1,10 +1,9 @@
-# Table of Contents
+Table of contents
 
-- [Table of Contents](#table-of-contents)
-  - [Instructions](#instructions)
-  - [Requirements](#requirements)
-  - [Configure k8s cluster](#configure-k8s-cluster)
-  - [Install Otomi](#install-otomi)
+- [Instructions](#instructions)
+- [Requirements](#requirements)
+- [Configure k8s cluster](#configure-k8s-cluster)
+- [Install Otomi](#install-otomi)
 
 ## Instructions
 
