@@ -9,22 +9,25 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ---
 
-## Public cloud providers
+## Providers
 
 The quickstart is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 - [**Amazon Web Services** (`aws`)](./aws)
+- [**Onprem**](./onprem)
 
-The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+The quickstart creates a (managed) Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit: [otomi.io](https://otomi.io).
 
-### Requirements
+The `onprem` installation is suitable for experimentation. This might be favorable if you don't want to or are not able to, interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube and have provided a basic setup to do so, but it could work equally well on other k8s installation methods.
+
+#### Requirements
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
 - Credentials for the cloud provider used for the quickstart
 
-### Deploy
+#### Deploy
 
 The quickstart contains different Terraform workflows for each cloud provider respectively:
 
@@ -61,7 +64,7 @@ Once the cluster is up and running,
 3. Run `terraform init`
 4. Run `terraform apply`
 
-### Next Steps
+#### Next Steps
 
 1. Monitor the logs of the installer job
 
@@ -70,9 +73,9 @@ kubectl logs jobs/quickstart-otomi -n default -f
 ```
 
 2. When the installer is finished, copy the `url` and `admin-password` from the console output
-3. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
+3. Follow the post-installation steps [here](https://otomi.io/docs/installation/post-install)
 
-### Destroy
+#### Destroy
 
 When you're finished exploring Otomi, use terraform to tear down all resources in the quickstart.
 
