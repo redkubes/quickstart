@@ -20,7 +20,7 @@ The quickstart is available for:
 
 The quickstart creates a (managed) Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit: [otomi.io](https://otomi.io).
 
-The `onprem` installation is suitable for experimentation. This might be favorable if you don't want to, or are not able to, interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube, and have provided a basic setup to do so, but it could work equally well on other k8s installation methods.
+The `onprem` installation is suitable for experimentation. This might be favorable if you don't want to or are not able to, interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube and have provided a basic setup to do so, but it could work equally well on other k8s installation methods.
 
 #### Requirements
 
@@ -73,7 +73,7 @@ kubectl logs jobs/quickstart-otomi -n default -f
 ```
 
 2. When the installer is finished, copy the `url` and `admin-password` from the console output
-3. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
+3. Follow the post-installation steps [here](https://otomi.io/docs/installation/post-install)
 
 #### Destroy
 
