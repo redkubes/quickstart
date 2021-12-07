@@ -46,11 +46,12 @@ minikube start --driver docker --network minikube "--kubernetes-version=v1.$mino
 
 4. Inspect `onprem/values.yaml`. Ensure access to this file by either cloning this repository, downloading the file from Github, or copying the contents to a file named `values.yaml` (or substitute the file name in the following steps).
 
-5. Assuming the install has successfully worked for your environment (and please don't hesitate to open a ticket in https://github.com/redkubes/quickstart/issues where we will respond promptly!), run:
+5. Follow the [common installation process](#install-otomi), but please note that once `nginx-ingress` is deployed, you should run: 
 
 ```bash
-minikube tunnel # will expose something like 127.0.0.1.nip.io, check `kubectl get ingress -A -o wide`
+minikube tunnel & # will expose something like 127.0.0.1.nip.io, check `kubectl get ingress -A -o wide`
 ``` 
+
 </details>
 &nbsp; 
 
@@ -65,7 +66,7 @@ helm install -f onprem/values.yaml otomi otomi/otomi
 Monitor the logs of the installer job:
 
 ```bash
-kubectl logs jobs/quickstart-otomi -n default -f
+kubectl logs jobs/otomi -n default -f
 ```
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
