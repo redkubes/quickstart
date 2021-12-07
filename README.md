@@ -9,15 +9,18 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ---
 
-## Public cloud providers
+## Providers
 
 The quickstart is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 - [**Amazon Web Services** (`aws`)](./aws)
+- [**Onprem (minikube)m**](./onprem)
 
-The quickstart creates managed Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+The quickstart creates a (managed) Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit [otomi.io](https://otomi.io)
+
+The onprem install is suitable for experimentation. This might be favorable if you don't want to or are not able to interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube, and have provided a basic setup to do so, but it could work equally well on other providers, e.g. kubeadm/k3s/microk8s. 
 
 ### Requirements
 
