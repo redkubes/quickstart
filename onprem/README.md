@@ -57,9 +57,11 @@ minikube tunnel & # will expose something like 127.0.0.1.nip.io, check `kubectl 
 
 ## Install Otomi
 
-Setup Otomi by following our official documentation: https://github.com/redkubes/otomi-core#install-with-minimal-values-using-helm, but upon `helm install`, use the `-f|--file` parameter with the file in this folder (please inspect this file if you haven't done so already):
+Run the following command:
 
 ```bash
+helm repo add otomi https://otomi.io/otomi-core
+helm repo update
 helm install -f onprem/values.yaml otomi otomi/otomi
 ```
 
