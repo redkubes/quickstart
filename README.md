@@ -22,12 +22,12 @@ The quickstart creates a (managed) Kubernetes cluster (AKS/GKE/EKS) and installs
 
 The onprem install is suitable for experimentation. This might be favorable if you don't want to or are not able to interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube, and have provided a basic setup to do so, but it could work equally well on other providers, e.g. kubeadm/k3s/microk8s. 
 
-### Requirements
+#### Requirements
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
 - Credentials for the cloud provider used for the quickstart
 
-### Deploy
+#### Deploy
 
 The quickstart contains different Terraform workflows for each cloud provider respectively:
 
@@ -64,7 +64,7 @@ Once the cluster is up and running,
 3. Run `terraform init`
 4. Run `terraform apply`
 
-### Next Steps
+#### Next Steps
 
 1. Monitor the logs of the installer job
 
@@ -75,7 +75,7 @@ kubectl logs jobs/quickstart-otomi -n default -f
 2. When the installer is finished, copy the `url` and `admin-password` from the console output
 3. Follow the post installation steps [here](https://otomi.io/docs/installation/post-install)
 
-### Destroy
+#### Destroy
 
 When you're finished exploring Otomi, use terraform to tear down all resources in the quickstart.
 
@@ -87,3 +87,7 @@ Make sure you tear down any resources you provisioned manually before running th
 terraform destroy -auto-approve
 # This destroys all the resources without prompting confirmation
 ```
+
+### Deploy on onprem k8s cluster
+
+Refer to [**Onprem instructions** (`onprem/README.md`)](./onprem/README.md).
