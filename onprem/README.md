@@ -8,16 +8,16 @@ Table of contents
 ## Instructions
 
 - Please be advised to run Otomi on a sufficiently powerful machine or cluster, ie.: 12+ CPU, 32GB+ RAM, depending on the configuration
-- It is not recommended to run it on a laptop because of resource utilization
+- It is not recommended to run it on a laptop because of high resource utilization
 - We recommend a Linux distribution like Ubuntu for the k8s host
 
 ## Requirements
 
 - Install [`helm`](https://helm.sh/docs/intro/install/)
 
-## Configure k8s cluster
+## Install Kubernetes
 
-We assume you are able to configure a k8s cluster with the aforementioned specifications. Here are some commonly used options (please note that your mileage may vary) in no particular order:
+We assume you are able to install a Kubernetes cluster with the recommended specifications. Here are some commonly used options:
 
 - [microk8s](https://microk8s.io)
 - [k3s](https://k3s.io)
