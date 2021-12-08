@@ -27,11 +27,11 @@ The `onprem quick start` installs Otomi in evaluation mode on Kubernetes provisi
 #### Requirements
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
-- Credentials for the cloud provider used for the quickstart
+- Credentials for the cloud provider used for the quick start
 
 #### Deploy
 
-The quickstart contains different Terraform workflows for each cloud provider respectively:
+The quick start contains different Terraform workflows for each cloud provider respectively:
 
 ```
 quickstart
