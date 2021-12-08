@@ -1,4 +1,4 @@
-# Otomi Quickstart
+# Otomi quick start
 
 Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the public cloud of your choice.
 
@@ -11,16 +11,18 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ## Providers
 
-The quickstart is available for:
+A quick start is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 - [**Amazon Web Services** (`aws`)](./aws)
 - [**Onprem**](./onprem)
 
-The quickstart creates a (managed) Kubernetes cluster (AKS/GKE/EKS) and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise/production) setup, please visit: [otomi.io](https://otomi.io).
+The `Terraform quick start` creates a (managed) Kubernetes cluster (AKS/GKE/EKS) in your public cloud of choice and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise-grade/production-ready) setup, please visit: [otomi.io](https://otomi.io).
 
-The `onprem` installation is suitable for experimentation. This might be favorable if you don't want to or are not able to, interact with a public cloud provider, for various reasons, and you still would like to try out Otomi. We recommend Minikube and have provided a basic setup to do so, but it could work equally well on other k8s installation methods.
+The `onprem quick start` installs Otomi in evaluation mode on Kubernetes provisioned using microk8s, k3s, k0s, kubeadm, kubespray or minikube running on your private/local hardware.
+
+## Terraform quick start
 
 #### Requirements
 
