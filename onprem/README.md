@@ -24,8 +24,9 @@ We assume you are able to install a Kubernetes cluster with the recommended spec
 - [k0s](https://k0sproject.io)
 - [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 - [kubespray](https://github.com/kubernetes-sigs/kubespray)
+- [Minikube](https://minikube.sigs.k8s.io)
 
-We've prepared a walkthrough for [minikube](https://minikube.sigs.k8s.io) if you would like a basic configuration and have no specific requirements for the environment (note that this is a single node configuration).
+We've prepared a walkthrough for `Minikube` if you would like a basic configuration and have no specific requirements for the environment (note that this is a single node configuration).
 
 <details>
   <summary>Click here to see the (optional) Minikube configuration</summary>
