@@ -1,23 +1,12 @@
-Table of contents
-
-- [Instructions](#instructions)
-- [Requirements](#requirements)
-- [Configure k8s cluster](#configure-k8s-cluster)
-- [Install Otomi](#install-otomi)
-
-## Instructions
-
-- Please be advised to run Otomi on a sufficiently powerful machine or cluster, ie.: 12+ CPU, 32GB+ RAM, depending on the configuration
-- It is not recommended to run it on a laptop because of high resource utilization
-- We recommend a Linux distribution like Ubuntu for the k8s host
+> 🔔 The onprem provider does NOT support ARM CPU architecture
 
 ## Requirements
 
-- Install [`helm`](https://helm.sh/docs/intro/install/)
+- A sufficiently powerful machine or cluster, ie.: 16 CPU threads, 32GB+ RAM, It is not recommended to run it on a laptop because of high resource utilization
+- A Linux distribution like Ubuntu for the k8s host(s)
+- [`helm`](https://helm.sh/docs/intro/install/) installed
 
-## Install Kubernetes
-
-We assume you are able to install a Kubernetes cluster with the recommended specifications. Here are some commonly used options:
+We assume you have a Kubernetes cluster with the recommended specifications. Here are some commonly used options:
 
 - [microk8s](https://microk8s.io)
 - [k3s](https://k3s.io)
@@ -25,6 +14,8 @@ We assume you are able to install a Kubernetes cluster with the recommended spec
 - [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 - [kubespray](https://github.com/kubernetes-sigs/kubespray)
 - [Minikube](https://minikube.sigs.k8s.io)
+
+## Minikube walkthrough
 
 We've prepared a walkthrough for `Minikube` if you would like a basic configuration and have no specific requirements for the environment (note that this is a single node configuration).
 
