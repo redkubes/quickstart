@@ -51,7 +51,7 @@ resource "google_container_node_pool" "primary_nodes" {
     }
 
     # preemptible  = true
-    machine_type = "e2-highmem-4"
+    machine_type = "e2-standard-4"
     tags         = ["gke-node", "quickstart-${var.cluster_name}"]
     metadata = {
       disable-legacy-endpoints = "true"
