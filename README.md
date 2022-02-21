@@ -1,6 +1,6 @@
 # Otomi quick start
 
-Quickly deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the public cloud of your choice.
+This quick start is for users who want to deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the most popular public cloud providers(AWS, Azure and Google).
 
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
@@ -16,24 +16,21 @@ A quick start is available for:
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
 - [**Amazon Web Services** (`aws`)](./aws)
-- [**Onprem**](./onprem)
 
-The `Terraform quick start` creates a (managed) Kubernetes cluster (AKS/GKE/EKS) in your public cloud of choice and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise-grade/production-ready) setup, please visit: [otomi.io](https://otomi.io).
+The `terraform quick start` creates a (managed) Kubernetes cluster (AKS/GKE/EKS) in your public cloud of choice and installs Otomi in evaluation mode, which does not require any 3rd party services (e.g.: DNS, IdP, KMS). For a full (enterprise-grade/production-ready) setup, please visit: [otomi.io](https://otomi.io).
 
-The `onprem quick start` installs Otomi in evaluation mode on Kubernetes provisioned using microk8s, k3s, k0s, kubeadm, kubespray or minikube running on your private/local hardware.
+## Getting Started
 
-## Terraform quick start
-
-#### Requirements
+### Requirements
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) >=0.14.0
 - Credentials for the cloud provider used for the quick start
 
-#### Deploy
+### Deploy
 
 The quick start contains different Terraform workflows for each cloud provider respectively:
 
-```
+```bash
 quickstart
 ├── aws
 │   ├── eks             # Terraform workflow for installing EKS cluster
