@@ -1,7 +1,7 @@
 variable "aws_profile" {
   description = "Set this variable if you use another profile besides the default awscli profile called 'default'."
-  type = string
-  default = "default"
+  type        = string
+  default     = "default"
 }
 
 variable "aws_accounts" {
@@ -51,10 +51,15 @@ variable "aws_region" {
   description = "AWS region used for all resources"
   default     = "eu-central-1"
 }
+
+variable "aws_availability_zones" {
+  description = "AWS availability zones"
+  default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+}
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
-  default = "otomi-quickstart"
+  default     = "otomi-quickstart"
 }
 
 variable "cluster_version" {
