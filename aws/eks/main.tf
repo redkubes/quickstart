@@ -2,8 +2,11 @@
 # EKS Module
 ################################################################################
 
+
 module "eks" {
-  source          = "terraform-aws-modules/eks/aws"
+  source = "terraform-aws-modules/eks/aws"
+  # Do not upgrade to v18.0. and above as it will break the changes
+  version         = "17.24.0"
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
 
@@ -74,9 +77,6 @@ data "aws_eks_cluster_auth" "cluster" {
 # Supporting Resources
 ################################################################################
 
-data "aws_availability_zones" "available" {
-  # names = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
-}
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
@@ -84,7 +84,7 @@ module "vpc" {
 
   name                 = var.cluster_name
   cidr                 = "10.0.0.0/16"
-  azs                  = data.aws_availability_zones.available.names
+  azs                  = var.aws_availability_zones
   private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   enable_nat_gateway   = true
