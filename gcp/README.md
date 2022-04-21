@@ -1,19 +1,18 @@
-## Getting started with Otomi on GKE
+# Getting started with Otomi on GKE
 
----
-
-### Prerequisites
+## Prerequisites
 
 - [GCloud SDK](https://cloud.google.com/sdk/docs/install)
-- [Terraform](https://cloud.google.com/sdk/docs/install)
 
-#### GCloud Cheat Sheet
+>Note: If you login via [Google Cloud Shell](https://cloud.google.com/shell), you don't need to install the prerequisites
+
+**GCloud CLI Cheat Sheet**
 
 ```bash
 # Initialize and authentication
 gcloud init
 gcloud auth login
-gcloud auth application-default login
+gcloud config set project PROJECT_ID
 
 # Enable google services api
 gcloud services enable compute.googleapis.com
@@ -22,50 +21,64 @@ gcloud services enable container.googleapis.com
 
 ---
 
-### Set up a managed kubernetes cluster on GKE
+## Set up a managed kubernetes cluster on GKE
 
-- Navigate into the `gke` directory
-- Add your Project ID and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
-
-- Open a terminal and run the following:
+Set up environment variables
 
 ```bash
-# Initializes the directory
-terraform init
-# Sets up the GKE cluster
-terraform apply
+# Set Cluster name
+CLUSTER_NAME=otomi-quickstart
+# Set region
+COMPUTE_REGION=europe-west4
+```
+
+```bash
+# Create the cluster 
+gcloud container clusters create $CLUSTER_NAME \
+    --enable-autoscaling \
+    --enable-network-policy \
+    --num-nodes 1 \
+    --min-nodes 1 \
+    --max-nodes 3 \
+    --machine-type e2-standard-4 \
+    --region $COMPUTE_REGION
+```
+
+Get the Kubernetes config files for your new GKE cluster
+
+```bash
+gcloud container clusters get-credentials $CLUSTER_NAME --region $COMPUTE_REGION
 ```
 
 ---
 
-### Install Otomi
-
-- Navigate to the `otomi-install` directory
-- Add your GKE Cluster Name and Project Region to the `terraform.tfvars.example` file and rename the file to `terraform.tfvars`
-- Open a terminal and run the following:
+## Install Otomi using helm
 
 ```bash
-# Initializes the directory
-terraform init
-# Deploys and otomi installer job on the GKE cluster
-terraform apply
+# Add the Otomi repo
+helm repo add otomi https://otomi.io/otomi-core 
+helm repo update
+# Otomi install with minimal chart values
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.21" --set cluster.name=$CLUSTER_NAME --set cluster.provider=google
 ```
 
-Check the logs of the Otomi installer job to see when the installation has finished. The installation can take around 20 to 30 minutes.
-
-First get the credentials of the cluster:
+The helm chart deploys an installer job responsible for installing the Otomi platform on the GKE cluster.
 
 ```bash
-# Default: gcloud container clusters get-credentials otomi-quickstart --region europe-west4
-gcloud container clusters get-credentials <cluster_name> --region <region>
+# Monitor the job status
+kubectl get job otomi -w
+# Installer job logs
+kubectl logs jobs/otomi -n default -f
 ```
 
-Monitor the logs of the installer job:
+At the end of the logs of the installer job, you will find the `URL` and the `credentials` to log into the Otomi console.
 
 ```bash
-kubectl logs jobs/quickstart-otomi -n default -f
+ ########################################################################################                                      
+ #  To start using Otomi, go to https://<your-ip>.nip.io and sign in to the web console 
+ #  with username "otomi-admin" and password "password".
+ #  Then activate Drone. For more information see: https://otomi.io/docs/installation/activation
+ ########################################################################################
 ```
-
-When the installer is finished, copy the `url` and `admin-password` from the console output.
 
 Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
