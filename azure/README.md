@@ -1,9 +1,12 @@
-## Getting started with Otomi on AKS
+# Getting started with Otomi on AKS
 
-### Prerequisites
+## Prerequisites
 
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- [Terraform](https://cloud.google.com/sdk/docs/install)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Helm](https://kubernetes.io/docs/tasks/tools/)
+
+>Note: If you login via [Azure Cloud Shell]( https://shell.azure.com), you don't need to install the prerequisites
 
 #### Azure CLI Cheat Sheet
 
@@ -17,52 +20,77 @@ az account set --subscription=<subscription_id>
 ```
 
 ---
+## Set up a managed kubernetes cluster on AKS
 
-### Set up a managed kubernetes cluster on AKS
-
-- Navigate into the `aks` directory
-- Add your Azure Subscription Id and Tenant ID to the `terraform.tfvars.example` and rename the file to `terraform.tfvars`
-- Open a terminal and run the following:
-
+Setting the environment variables
 ```bash
-# Initializes the directory
-terraform init
-# Sets up the AKS cluster
-terraform apply
+# Set Resource Group Name 
+RGNAME=otomi
+# Set Region (Location) or any other location
+LOCATION=westeurope
+# Create Resource Group
+az group create -n $RGNAME -l $LOCATION
+# Set Cluster name
+CLUSTER=otomi-quickstart
 ```
 
----
-
-### Install Otomi
-
-When the cluster is available:
-
-- Navigate to the `otomi-install` directory
-- Fill in the  `terraform.tfvars` if not using defaults
-- Open a terminal and run the following:
+Creating the cluster
 
 ```bash
-# Initializes the directory
-terraform init
-# Deploys and otomi installer job on the AKS cluster
-terraform apply
+# Create AKS cluster
+az aks create --name $CLUSTERNAME \
+--resource-group $RGNAME \
+--location $LOCATION \
+--zones 1 2 \
+--vm-set-type VirtualMachineScaleSets \
+--nodepool-name otomipool \
+--node-count 2 \
+--node-vm-size Standard_D3_v2 \
+--kubernetes-version 1.21.9 \
+--enable-cluster-autoscaler \
+--min-count 2 \
+--max-count 3 \
+--max-pods 100 \
+--network-plugin azure \
+--network-policy calico \
+--outbound-type loadBalancer \
+--uptime-sla \
+--generate-ssh-keys
 ```
 
-Check the logs of the Otomi installer job to see when the installation has finished. The installation can take around 20 to 30 minutes.
-
-First get the credentials of the cluster:
+Get the Kubernetes config files for your new AKS cluster
 
 ```bash
-# Default: az aks get-credentials --resource-group otomi-quickstart-rg --name otomi-quickstart --admin
-az aks get-credentials --resource-group <resource-group-name> --name <cluster-name>
+az aks get-credentials -n $CLUSTERNAME -g $RGNAME
 ```
 
-Monitor the logs of the installer job:
+## Install Otomi using helm
 
 ```bash
-kubectl logs jobs/quickstart-otomi -n default -f
+# Add the Otomi repo
+helm repo add otomi https://otomi.io/otomi-core 
+helm repo update
+# Otomi install with minimal chart values
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.21" --set cluster.name=$CLUSTERNAME --set cluster.provider=azure
 ```
 
-When the installer is finished, copy the `url` and `admin-password` from the console output.
+The helm chart deploys an installer job responsible for installing the Otomi platform on the AKS cluster.
+
+```bash
+# Monitor the job status
+kubectl get job otomi -w
+# Installer job logs
+kubectl logs jobs/otomi -n default -f
+```
+
+At the end of the logs of the installer job, you will find the `URL` and the `credentials` to log into the Otomi console.
+
+```bash
+ ########################################################################################                                      
+ #  To start using Otomi, go to https://<your-ip>.nip.io and sign in to the web console 
+ #  with username "otomi-admin" and password "password".
+ #  Then activate Drone. For more information see: https://otomi.io/docs/installation/activation
+ ########################################################################################
+```
 
 Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
