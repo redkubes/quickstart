@@ -31,14 +31,14 @@ LOCATION=westeurope
 # Create Resource Group
 az group create -n $RGNAME -l $LOCATION
 # Set Cluster name
-CLUSTER=otomi-quickstart
+CLUSTER_NAME=otomi-quickstart
 ```
 
 Creating the cluster
 
 ```bash
 # Create AKS cluster
-az aks create --name $CLUSTERNAME \
+az aks create --name $CLUSTER_NAME \
 --resource-group $RGNAME \
 --location $LOCATION \
 --zones 1 2 \
@@ -61,7 +61,7 @@ az aks create --name $CLUSTERNAME \
 Get the Kubernetes config files for your new AKS cluster
 
 ```bash
-az aks get-credentials -n $CLUSTERNAME -g $RGNAME
+az aks get-credentials -n $CLUSTER_NAME -g $RGNAME
 ```
 
 ## Install Otomi using helm
@@ -71,7 +71,7 @@ az aks get-credentials -n $CLUSTERNAME -g $RGNAME
 helm repo add otomi https://otomi.io/otomi-core 
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.21" --set cluster.name=$CLUSTERNAME --set cluster.provider=azure
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.21" --set cluster.name=$CLUSTER_NAME --set cluster.provider=azure
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the AKS cluster.
