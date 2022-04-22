@@ -1,7 +1,8 @@
 # Otomi quick start
 
-This quick start is for users who want to deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the most popular public cloud providers(AWS, Azure and Google).
+This quick start is for users who want to deploy a Kubernetes cluster with [Otomi](https://github.com/redkubes/otomi-core) on the most popular *public cloud providers* or also locally on your PC/Mac using *minikube*.  
 
+---
 **NOTE:** Intended for experimentation/evaluation ONLY.
 
 **You will be responsible for any/all infrastructure costs incurred by the used resources.**
@@ -11,7 +12,12 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ## Providers
 
-A quick start is available for:
+Quick start for `custom` providers:
+
+- [DigitalOcean](./digitalocean/)
+- [**Minikube(Mac/Windows)**](./minikube/)
+
+Terraform quick start is available for:
 
 - [**Google Cloud Platform** (`gcp`)](./gcp)
 - [**Microsoft Azure Cloud** (`azure`)](./azure)
