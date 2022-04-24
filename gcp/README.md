@@ -40,11 +40,11 @@ gcloud container clusters create $CLUSTER_NAME \
     --num-nodes 1 \
     --min-nodes 1 \
     --max-nodes 3 \
-    --machine-type e2-standard-4 \
+    --machine-type e2-standard-8 \
     --region $COMPUTE_REGION
 ```
 
-Get the Kubernetes config files for your new GKE cluster
+Update the Kubernetes config file
 
 ```bash
 gcloud container clusters get-credentials $CLUSTER_NAME --region $COMPUTE_REGION
