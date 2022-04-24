@@ -44,11 +44,11 @@ az aks create --name $CLUSTER_NAME \
 --zones 1 2 \
 --vm-set-type VirtualMachineScaleSets \
 --nodepool-name otomipool \
---node-count 2 \
---node-vm-size Standard_D3_v2 \
+--node-count 1 \
+--node-vm-size Standard_A8_v2 \
 --kubernetes-version 1.21.9 \
 --enable-cluster-autoscaler \
---min-count 2 \
+--min-count 1 \
 --max-count 3 \
 --max-pods 100 \
 --network-plugin azure \
@@ -58,7 +58,7 @@ az aks create --name $CLUSTER_NAME \
 --generate-ssh-keys
 ```
 
-Get the Kubernetes config files for your new AKS cluster
+Update the Kubernetes config file
 
 ```bash
 az aks get-credentials -n $CLUSTER_NAME -g $RGNAME
