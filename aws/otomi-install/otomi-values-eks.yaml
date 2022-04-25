@@ -1,6 +1,6 @@
 cluster:
   owner: redkubes
-  k8sVersion: '1.20'
-  name: quickstart
+  k8sVersion: '1.21'
+  name: otomi-eks-quickstart
   provider: aws
   region: eu-central-1

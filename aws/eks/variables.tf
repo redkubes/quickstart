@@ -59,7 +59,7 @@ variable "aws_availability_zones" {
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
-  default     = "otomi-quickstart"
+  default     = "otomi-eks-quickstart"
 }
 
 variable "cluster_version" {

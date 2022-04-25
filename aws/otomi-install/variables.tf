@@ -6,11 +6,11 @@ variable "aws_region" {
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
-  default     = "otomi-quickstart"
+  default     = "otomi-eks-quickstart"
 }
 
 variable "cluster_version" {
   type        = string
   description = "AWS EKS cluster version"
-  default     = "1.20"
+  default     = "1.21"
 }

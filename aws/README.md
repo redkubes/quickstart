@@ -62,7 +62,7 @@ First get the credentials of the cluster:
 
 ```bash
 # Update your kubeconfig
-# Default: aws eks update-kubeconfig --name otomi-quickstart
+# Default: aws eks update-kubeconfig --name otomi-eks-quickstart
 aws eks update-kubeconfig --name <cluster_name>
 ```
 

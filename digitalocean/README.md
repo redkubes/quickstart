@@ -14,21 +14,20 @@ doctl auth init
 doctl kubernetes cluster list
 
 # Set env
-NAME="otomi"
+NAME="quickstart"
 OWNER="user"
 
 # Create kubernetes cluster
-doctl kubernetes cluster create $NAME \
+doctl kubernetes cluster create otomi-digitalocean-$NAME \
 --tag $OWNER \
 --region ams3 \
---vpc-uuid=2c840be3-de75-48c4-b0d6-66b214e2d39e \
 --node-pool "name=${NAME};size=s-4vcpu-8gb;tag=${OWNER};auto-scale=true;min-nodes=2;max-nodes=5;count=2;" \
 --wait
 ```
 
 ```bash
 # Update kubeconfig
-doctl kubernetes cluster kubeconfig save $NAME
+doctl kubernetes cluster kubeconfig save otomi-digitalocean-$NAME
 ```
 
 ## Install Otomi using helm
@@ -38,7 +37,7 @@ doctl kubernetes cluster kubeconfig save $NAME
 helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=$NAME --set cluster.provider=custom --set apps.host-mods.enabled=false
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=otomi-digitalocean-$NAME --set cluster.provider=custom --set apps.host-mods.enabled=false
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the DOKS cluster.

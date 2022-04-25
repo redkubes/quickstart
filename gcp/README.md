@@ -27,7 +27,7 @@ Set up environment variables
 
 ```bash
 # Set Cluster name
-CLUSTER_NAME=otomi-quickstart
+CLUSTER_NAME=otomi-gcp-quickstart
 # Set region
 COMPUTE_REGION=europe-west4
 ```

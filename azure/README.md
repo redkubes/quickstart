@@ -31,7 +31,8 @@ LOCATION=westeurope
 # Create Resource Group
 az group create -n $RGNAME -l $LOCATION
 # Set Cluster name
-CLUSTER_NAME=otomi-quickstart
+NAME=quickstart
+CLUSTER_NAME=otomi-aks-$NAME
 ```
 
 Creating the cluster
