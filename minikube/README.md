@@ -9,15 +9,12 @@
 >**_NOTE:_** Windows users,  open PowerShell as Administrator to execute the commands
 
 ```bash
-# Set the cpus and memory
-minikube config set memory 8g
-minikube config set cpus 8
 
 # Enable calico if you want to check network policies
 # For Windows 
-minikube start --driver=hyperv --kubernetes-version=v1.22.4 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.22.4 --cni calico
 # For Mac
-minikube start --driver=hyperkit --kubernetes-version=v1.22.4 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.22.4 --cni calico
 ```
 
 Enable metallb (network load balancer)
