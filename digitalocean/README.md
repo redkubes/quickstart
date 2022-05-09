@@ -37,7 +37,7 @@ doctl kubernetes cluster kubeconfig save otomi-digitalocean-$NAME
 helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=otomi-digitalocean-$NAME --set cluster.provider=custom --set apps.host-mods.enabled=false
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=otomi-digitalocean-$NAME --set cluster.provider=digitalocean --set apps.host-mods.enabled=false
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the DOKS cluster.
