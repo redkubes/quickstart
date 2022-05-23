@@ -44,5 +44,4 @@ kubectl logs jobs/otomi -n default -f
 
 At the end of the logs of the installer job, you will find the `URL` and the `credentials` to log into the Otomi console.
 
-Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
-
+Follow the post installation steps [here.](../post-install/README.md)

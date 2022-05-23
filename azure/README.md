@@ -94,4 +94,4 @@ At the end of the logs of the installer job, you will find the `URL` and the `cr
  ########################################################################################
 ```
 
-Follow the post installation steps [here.](https://otomi.io/docs/installation/post-install)
+Follow the post installation steps [here.](../post-install/README.md)
