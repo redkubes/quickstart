@@ -63,7 +63,7 @@ First get the credentials of the cluster:
 ```bash
 # Update your kubeconfig
 # Default: aws eks update-kubeconfig --name otomi-eks-quickstart
-aws eks update-kubeconfig --name <cluster_name>
+aws eks --region ap-south-1 update-kubeconfig --name <cluster_name>
 ```
 
 Monitor the logs of the installer job:
