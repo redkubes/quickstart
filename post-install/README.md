@@ -46,3 +46,6 @@ NOTE:
 - Click on `+ ACTIVATE REPOSITORY`
 
 <img src="./img/otomi-drone-activate.gif" alt="activate drone" width="1080" height="570"/>
+
+## Checkout the hands-on labs
+Explore Otomi through a series of hands-on [labs.](https://github.com/redkubes/workshops)
