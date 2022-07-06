@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-- [minikube(Mac/Windows)](https://minikube.sigs.k8s.io/docs/start/)
+- [minikube](https://minikube.sigs.k8s.io/docs/start/) (Mac/Windows/Linux)
+- Linux only: [kvm2](https://minikube.sigs.k8s.io/docs/drivers/kvm2/) or [Docker](https://minikube.sigs.k8s.io/docs/drivers/docker/) - detailed setup depends on Linux distribution
 
 ## Configure Minikube cluster
 
@@ -15,6 +16,10 @@
 minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.22.4 --cni calico
 # For Mac
 minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.22.4 --cni calico
+# For Linux, using the KVM2 driver
+minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.22.4 --cni calico
+# or for using the Docker driver
+minikube start --memory=8192 --cpus=8 --driver=docker --kubernetes-version=v1.22.4 --cni calico
 ```
 
 Enable metallb (network load balancer)
