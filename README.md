@@ -17,7 +17,7 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 Quick start is available for the following providers:
 
-- [**Minikube(Mac/Windows)**](./minikube/)
+- [**Minikube (Mac/Windows/Linux)**](./minikube/)
 - [**DigitalOcean**](./digitalocean/)
 - [**Linode**](./linode/)
 - [**Google Cloud Platform** (`gcp`)](./gcp)
