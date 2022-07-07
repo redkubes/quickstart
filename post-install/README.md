@@ -34,6 +34,7 @@ NOTE:
   Import-Certificate -FilePath "<downloaded cert path>" -CertStoreLocation Cert:\LocalMachine\Root
   # Restart the browser or open it in private mode
   ```
+-  Docker restart is needed if you want to use the docker client to push images to the Harbor registry.  
 
 ## Post-install configurations
 
