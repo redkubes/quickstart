@@ -40,7 +40,7 @@ minikube addons configure metallb
 helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.23" --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false --set apps.metrics-server.extraArgs.kubelet-insecure-tls=true
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.23" --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false --set apps.metrics-server.extraArgs.kubelet-insecure-tls=true --set apps.metrics-server.extraArgs.kubelet-preferred-address-types=InternalIP
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the minikube cluster.
