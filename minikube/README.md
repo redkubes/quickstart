@@ -7,12 +7,12 @@
 
 ## Configure Minikube cluster
 
->**_NOTE:_** Windows users,  open PowerShell as Administrator to execute the commands
+> **_NOTE:_** Windows users, open PowerShell as Administrator to execute the commands
 
 ```bash
 
 # Enable calico if you want to check network policies
-# For Windows 
+# For Windows
 minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.22.4 --cni calico
 # For Mac
 minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.22.4 --cni calico
@@ -37,10 +37,10 @@ minikube addons configure metallb
 
 ```bash
 # Add the Otomi repo
-helm repo add otomi https://otomi.io/otomi-core 
+helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false
+helm install otomi otomi/otomi --set cluster.k8sVersion="1.23" --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false --set apps.metrics-server.extraArgs.kubelet-insecure-tls=true
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the minikube cluster.

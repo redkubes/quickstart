@@ -45,7 +45,8 @@ terraform apply
 ### Install Otomi on EKS
 
 - Navigate to the `otomi-install` directory
-- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters
+- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and customize configuration parameters
+- Copy `otomi-values-eks.yaml.example` file to `otomi-values-eks.yaml` file and customize configuration parameters
 - Open a terminal and run the following:
 
 ```bash
