@@ -37,5 +37,5 @@ terraform.rc
 # Misc
 .history
 .vscode
-kubeconfig_otomi-test
+kubeconfig*
 otomi-values-eks.yaml
