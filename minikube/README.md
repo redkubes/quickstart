@@ -18,7 +18,7 @@ minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.22
 minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.22.4 --cni calico
 # For Linux, using the KVM2 driver
 minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.22.4 --cni calico
-# or for using the Docker driver
+# or for using the Docker driver (Recomended for Apple M1 Chip)
 minikube start --memory=8192 --cpus=8 --driver=docker --kubernetes-version=v1.22.4 --cni calico
 ```
 
