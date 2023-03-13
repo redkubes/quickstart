@@ -64,7 +64,7 @@ Copy and paste the following script into your terminal.
 
 ```bash
 minikube addons enable metallb
-MINIKUBE_IP=$(minikube ip);START_IP=101;END_IP=151
+MINIKUBE_IP=$(minikube ip);START_IP=101;END_IP=121
 expect << _EOF_
 spawn minikube addons configure metallb
 expect "Enter Load Balancer Start IP:" { send "${MINIKUBE_IP%.*}.$START_IP\\r" }
@@ -73,13 +73,13 @@ expect eof
 _EOF_
 ```
 
-### Manual Way:
-
 If the above script fails, follow the steps described below in order to manually enable and configure Metallb addon, otherwise you can skip to the [Install Otomi using helm](#install-otomi-using-helm) Part
+
+### Manual Way:
 
 <details>
 
-<summary>Expand</summary>
+<summary>Expand...</summary>
 
 ### 1.Manually Enable and Configure Metallb
 
@@ -110,11 +110,12 @@ minikube addons configure metallb
 Terminal Output
 
 ```
--- Enter Load Balancer Start IP: 192.168.2.101
--- Enter Load Balancer END IP: 192.168.2.151
+-- Enter Load Balancer Start IP: 192.168.49.101
+-- Enter Load Balancer END IP: 192.168.49.121
 ```
 
-Enter the Start and End addresses using the above example replacing the IP address which you acquired in Step 3. Please note that first 3 segments of the IP range range should fit with the minikube IP while the last segment may be different according your requirements.
+Define the load balancer's ip range using the above example replacing the IP address which is acquired in Step 3.
+_Note_ First 3 segments of the IP should be same as the minikube IP Network address while the last segment may be customized.
 
 </details>
 
