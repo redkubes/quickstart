@@ -67,8 +67,8 @@ minikube addons enable metallb
 MINIKUBE_IP=$(minikube ip);START_IP=101;END_IP=151
 expect << _EOF_
 spawn minikube addons configure metallb
-expect “Enter Load Balancer Start IP:” { send “${MINIKUBE_IP%.*}.$START_IP\\r” }
-expect “Enter Load Balancer End IP:” { send “${MINIKUBE_IP%.*}.$END_IP\\r” }
+expect "Enter Load Balancer Start IP:" { send "${MINIKUBE_IP%.*}.$START_IP\\r" }
+expect "Enter Load Balancer End IP:" { send "${MINIKUBE_IP%.*}.$END_IP\\r" }
 expect eof
 _EOF_
 ```
