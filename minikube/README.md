@@ -9,8 +9,8 @@
   - [For Linux, using the KVM2 driver](#for-linux-using-the-kvm2-driver)
   - [ For using the Docker driver (Recommended for Apple M1 Chip)](#for-using-the-docker-driver-recommended-for-apple-m1-chip)
 - [Enable Metallb (Network Load Balancer)](#enable-metallb-network-load-balancer)
-  - [Interactive Way](#interactive-way)
-  - [Manual Way](#manual-way)
+  - [Non Interactive Way](#non-interactive-way)
+  - [Manual Steps](#manual-steps)
     - [Manually Enable and Configure Metallb](#1manually-enable-and-configure-metallb)
     - [Get the IP](#2get-the-ip)
     - [Configure Metallb](#3configure-metallb)
@@ -58,7 +58,7 @@ minikube start --memory=8192 --cpus=8 --driver=docker --kubernetes-version=v1.23
 
 ## Enable Metallb (Network Load Balancer)
 
-### Interactive way:
+### Non Interactive way:
 
 Copy and paste the following script into your terminal.
 
@@ -75,7 +75,7 @@ _EOF_
 
 If the above script fails, follow the steps described below in order to manually enable and configure Metallb addon, otherwise you can skip to the [Install Otomi using helm](#install-otomi-using-helm) Part
 
-### Manual Way:
+### Manual Steps:
 
 <details>
 
