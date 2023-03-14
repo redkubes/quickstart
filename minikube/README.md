@@ -99,7 +99,7 @@ Terminal Output
 192.168.49.2
 ```
 
-_Pleas note that IP might and will probably be different in your system_
+_Please note that IP might and will probably be different in your system_
 
 ### 3.Configure metallb
 
@@ -114,7 +114,7 @@ Terminal Output
 -- Enter Load Balancer END IP: 192.168.49.121
 ```
 
-Define the load balancer's ip range using the above example replacing the IP address which is acquired in Step 3.
+Define the load balancer's IP address range using the above example replacing the IP address which is acquired in Step 3.
 _Note_ First 3 segments of the IP should be same as the minikube IP Network address while the last segment may be customized.
 
 </details>
