@@ -1,6 +1,6 @@
 cluster:
   owner: redkubes
-  k8sVersion: '1.21'
+  k8sVersion: "1.23"
   name: otomi-eks-quickstart
   provider: aws
   apiName: otomi-eks-quickstart

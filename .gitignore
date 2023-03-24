@@ -32,7 +32,10 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+.terraform.lock.hcl
 
 # Misc
 .history
 .vscode
+kubeconfig*
+otomi-values-eks.yaml
