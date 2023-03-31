@@ -22,3 +22,8 @@ output "node_groups" {
   description = "Outputs from node groups"
   value       = module.eks.node_groups
 }
+
+output "oidc_provider_arn" {
+  description = "Outputs from node groups"
+  value       = module.eks.oidc_provider_arn
+}

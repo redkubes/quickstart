@@ -13,6 +13,7 @@ module "eks" {
   vpc_id  = module.vpc.vpc_id
   subnets = module.vpc.private_subnets
 
+  enable_irsa = true
   cluster_endpoint_private_access = true
   cluster_endpoint_public_access  = true
 
@@ -59,6 +60,7 @@ module "eks" {
     "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
   }
 }
+
 
 ################################################################################
 # Kubernetes provider configuration
