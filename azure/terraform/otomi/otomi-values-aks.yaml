@@ -1,0 +1,8 @@
+cluster:
+  owner: redkubes
+  k8sVersion: '1.23'
+  name: otomi-aks-quickstart
+  provider: azure
+  apiName: otomi-aks-quickstart
+  region: eastus
+  
