@@ -49,12 +49,12 @@ variable "aws_users" {
 variable "aws_region" {
   type        = string
   description = "AWS region used for all resources"
-  default     = "eu-central-1"
+  default     = "us-east-1"
 }
 
 variable "aws_availability_zones" {
   description = "AWS availability zones"
-  default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
 variable "cluster_name" {
   type        = string
@@ -65,9 +65,16 @@ variable "cluster_name" {
 variable "cluster_version" {
   type        = string
   description = "AWS EKS cluster version"
-  default     = "1.21"
+  default     = "1.23"
 }
 
 variable "environment" {
   default = "community"
 }
+
+variable "chart_version_aws_ebs_csi_driver" {
+  type        = string
+  description = "Chart version"
+  default     = null
+}
+
