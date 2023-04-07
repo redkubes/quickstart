@@ -1,0 +1,10 @@
+cluster:
+  owner: redkubes
+  k8sVersion: "1.23"
+  name: otomi
+  provider: aws
+  apiName: otomi
+  region: eu-central-1
+otomi:
+  version: "v0.20.0"
+  adminPassword: "welcomeotomi"

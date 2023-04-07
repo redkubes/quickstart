@@ -29,7 +29,7 @@ module "eks" {
       min_capacity     = 1
 
       instance_types = ["c5.xlarge"]
-      capacity_type  = "ON_DEMAND"
+      capacity_type  = "SPOT" # ON_DEMAND
       k8s_labels = {
         role = "worker"
       }

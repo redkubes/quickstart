@@ -1,7 +1,0 @@
-cluster:
-  owner: redkubes
-  k8sVersion: "1.23"
-  name: otomi-eks-quickstart
-  provider: aws
-  apiName: otomi-eks-quickstart
-  region: eu-central-1
