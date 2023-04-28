@@ -1,5 +1,5 @@
 # Local .terraform directories
-**/.terraform/*
+.terraform
 
 # .tfstate files
 *.tfstate
@@ -38,4 +38,4 @@ terraform.rc
 .history
 .vscode
 kubeconfig*
-values.yaml
+**/values.yaml
