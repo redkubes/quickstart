@@ -29,7 +29,7 @@ aws iam list-groups
 ### Set up a managed kubernetes cluster on EKS
 
 - Navigate into the `eks` directory
-- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and fill in missing configuration parameters
+- Copy `example.tfvars` file to `terraform.tfvars` file and fill in missing configuration parameters
 - Open a terminal and run the following:
 
 ```bash
@@ -44,13 +44,13 @@ terraform apply
 
 ### Install Otomi on EKS
 
-- Navigate to the `otomi-install` directory
-- Copy `terraform.tfvars.example` file to `terraform.tfvars` file and customize configuration parameters
-- Copy `otomi-values-eks.yaml.example` file to `otomi-values-eks.yaml` file and customize configuration parameters
+- Navigate to the `otomi` directory
+- Copy `example.tfvars` file to `terraform.tfvars` file and customize configuration parameters
+- Copy `example.yaml` file to `values.yaml` file and customize configuration parameters
 - Open a terminal and run the following:
 
 ```bash
-cd aws/otomi-install # if you haven't done so already
+cd aws/otomi # if you haven't done so already
 # Initializes the directory
 terraform init
 # Deploys and otomi installer job on the EKS cluster
@@ -63,14 +63,14 @@ First get the credentials of the cluster:
 
 ```bash
 # Update your kubeconfig
-# Default: aws eks update-kubeconfig --name otomi-eks-quickstart
+# Default: aws eks update-kubeconfig --name otomi
 aws eks update-kubeconfig --name <cluster_name>
 ```
 
 Monitor the logs of the installer job:
 
 ```bash
-kubectl logs jobs/quickstart-otomi -n default -f
+kubectl logs jobs/otomi -n default -f
 ```
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.

@@ -11,12 +11,12 @@ provider "helm" {
 }
 
 resource "helm_release" "otomi" {
-  name = "quickstart-otomi"
+  name = "otomi"
 
   repository = "https://otomi.io/otomi-core"
   chart      = "otomi"
 
   values = [
-    file("${path.module}/otomi-values-eks.yaml")
+    file("${path.module}/values.yaml")
   ]
 }

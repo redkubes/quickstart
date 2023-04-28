@@ -21,12 +21,12 @@ variable "aws_roles" {
     groups   = list(string)
   }))
   default = [
-    {
-      rolearn  = "arn:aws:iam::222222222222:admin/user1"
-      username = "user1"
-      groups   = ["admin"]
-    },
-  ]
+  {
+    rolearn  = "arn:aws:iam::222222222222:role/OrganizationAccountAccessRole"
+    username = "OrganizationAccountAccessRole"
+    groups   = ["system:masters"]
+  },
+]
 }
 
 variable "aws_users" {
@@ -39,9 +39,9 @@ variable "aws_users" {
 
   default = [
     {
-      userarn  = "arn:aws:iam::222222222222:admin/user1"
-      username = "user1"
-      groups   = ["admin"]
+      userarn  = "arn:aws:iam::222222222222:user/admin"
+      username = "admin"
+      groups   = ["system:masters"]
     },
   ]
 }
@@ -49,17 +49,17 @@ variable "aws_users" {
 variable "aws_region" {
   type        = string
   description = "AWS region used for all resources"
-  default     = "us-east-1"
+  default     = "eu-central-1"
 }
 
 variable "aws_availability_zones" {
   description = "AWS availability zones"
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 }
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
-  default     = "otomi-eks-quickstart"
+  default     = "otomi"
 }
 
 variable "cluster_version" {
