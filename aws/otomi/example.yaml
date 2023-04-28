@@ -7,4 +7,13 @@ cluster:
   region: eu-central-1
 otomi:
   version: "v0.20.0"
-  adminPassword: "welcomeotomi"
+  adminPassword: "welcomeotomi" # If you neglect this line, otomi will create a random password which can be supplied at the end of Job Log
+# kms:
+#   sops:
+#     provider: "aws"
+#     aws:
+#       # Populate the keys entry with ARN or list of ARNS for KMS Keys
+#       keys: "arn:aws:kms:<aws-region>:<aws-account_number>:key/b106d2-<Key Number>-4f65de74b926"
+#       accessKey: "<your aws access key which has minimum user access to kms key above>"
+#       secretKey: "<your aws secret key which has minimum user access to kms key above>"
+#       region: "<aws-region>"

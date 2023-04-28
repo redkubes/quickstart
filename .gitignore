@@ -38,4 +38,4 @@ terraform.rc
 .history
 .vscode
 kubeconfig*
-otomi-values-eks.yaml
+values.yaml
