@@ -78,3 +78,45 @@ variable "chart_version_aws_ebs_csi_driver" {
   default     = null
 }
 
+variable "capacity_type" {
+  type = string
+  description = "ON_DEMAND or SPOT"
+  default = "SPOT"
+}
+
+
+variable "instance_types" {
+  type = list
+  description = "Pool of Instance types , https://aws.amazon.com/ec2/instance-types/"
+  default = ["c5.xlarge", "c5a.xlarge", "m5a.xlarge"]
+}
+
+variable "desired_capacity" {
+  type = number
+  description = "Desired number of nodes in the cluster"
+  default = 3
+}
+
+variable "maximum_capacity" {
+  type = number
+  description = "Maximum number of allowed nodes in the cluster"
+  default = 5
+}
+
+variable "minimum_capacity" {
+  type = number
+  description = "Maximum number of allowed nodes in the cluster"
+  default = 1
+}
+
+variable "ami_type" {
+  type = string
+  description = "AL2_x86_64 | AL2_ARM_64 | BOTTLEROCKET_x86_64"
+  default = "AL2_x86_64"
+}
+
+variable "disk_size" {
+  type = number
+  description = "EBS Disk size in GB"
+  default = 100  
+}

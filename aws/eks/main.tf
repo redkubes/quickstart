@@ -24,12 +24,14 @@ module "eks" {
 
   node_groups = {
     default = {
-      desired_capacity = 3
-      max_capacity     = 3
-      min_capacity     = 1
+      desired_capacity = var.desired_capacity
+      max_capacity     = var.maximum_capacity
+      min_capacity     = var.minimum_capacity
+      ami_type         = var.ami_type
+      disk_size        = var.disk_size
+      instance_types = var.instance_types
+      capacity_type  = var.capacity_type
 
-      instance_types = ["c5.xlarge"]
-      capacity_type  = "SPOT" # ON_DEMAND
       k8s_labels = {
         role = "worker"
       }
