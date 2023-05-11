@@ -39,3 +39,5 @@ terraform.rc
 .vscode
 kubeconfig*
 **/values.yaml
+aws-nuke-config-template.yaml
+temp
