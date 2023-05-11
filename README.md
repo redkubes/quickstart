@@ -15,7 +15,7 @@ This repository intends to minimize costs by only provisioning the minimum requi
 
 ## Getting Started
 
-Quick start is available for the following providers:
+Quick starts are available for the following providers:
 
 - [**Minikube (Mac/Windows/Linux)**](./minikube/)
 - [**DigitalOcean**](./digitalocean/)

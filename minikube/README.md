@@ -2,24 +2,26 @@
 
 #### Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Configure Minikube cluster](#configure-minikube-cluster)
-  - [For Windows](#for-windows)
-  - [For Mac](#for-mac)
-  - [For Linux, using the KVM2 driver](#for-linux-using-the-kvm2-driver)
-  - [ For using the Docker driver (Recommended for Apple M1 Chip)](#for-using-the-docker-driver-recommended-for-apple-m1-chip)
-- [Enable Metallb (Network Load Balancer)](#enable-metallb-network-load-balancer)
-  - [Non Interactive Way](#non-interactive-way)
-  - [Manual Steps](#manual-steps)
-    - [Manually Enable and Configure Metallb](#1manually-enable-and-configure-metallb)
-    - [Get the IP](#2get-the-ip)
-    - [Configure Metallb](#3configure-metallb)
-- [Install Otomi using Helm](#install-otomi-using-helm)
-  - [Add the Otomi Repo](#add-the-otomi-repo)
-  - [Otomi install with Minimal Chart Values](#otomi-install-with-minimal-chart-values)
-  - [Monitor the Job Status](#monitor-the-job-status)
-- [Installer Job Logs](#installer-job-logs)
-- [Additional Resources](#additional-resources)
+- [Getting started with Otomi on Minikube](#getting-started-with-otomi-on-minikube)
+      - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Configure Minikube cluster](#configure-minikube-cluster)
+    - [For Windows](#for-windows)
+    - [For Mac](#for-mac)
+    - [For Linux, using the KVM2 driver](#for-linux-using-the-kvm2-driver)
+    - [For using the Docker driver (Recommended for Apple M1 Chip)](#for-using-the-docker-driver-recommended-for-apple-m1-chip)
+  - [Enable Metallb (Network Load Balancer)](#enable-metallb-network-load-balancer)
+    - [Non Interactive way:](#non-interactive-way)
+    - [Manual Steps:](#manual-steps)
+    - [1.Manually Enable and Configure Metallb](#1manually-enable-and-configure-metallb)
+    - [2.Get the IP](#2get-the-ip)
+    - [3.Configure metallb](#3configure-metallb)
+  - [Install Otomi using helm](#install-otomi-using-helm)
+    - [Add the Otomi repo](#add-the-otomi-repo)
+    - [Otomi install with minimal chart values](#otomi-install-with-minimal-chart-values)
+    - [Monitor the job status](#monitor-the-job-status)
+    - [Installer job logs](#installer-job-logs)
+  - [Additional resources](#additional-resources)
 
 ## Prerequisites
 
@@ -152,7 +154,7 @@ kubectl logs jobs/otomi -n default -f
 
 At the end of the logs of the installer job, you will find the `URL` and the `credentials` to log into the Otomi console.
 
-Follow the post installation steps [here.](../post-install/README.md)
+Now follow the activation instructions [here.](https:otomi.io/docs/get-started/activation)
 
 ---
 
