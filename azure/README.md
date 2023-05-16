@@ -94,4 +94,4 @@ At the end of the logs of the installer job, you will find the `URL` and the `cr
  ########################################################################################
 ```
 
-Now follow the activation instructions [here.](https:otomi.io/docs/get-started/activation)
+Now follow the activation instructions [here.](https://otomi.io/docs/get-started/activation)

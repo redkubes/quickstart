@@ -44,4 +44,4 @@ kubectl logs jobs/otomi -n default -f
 
 At the end of the logs of the installer job, you will find the `URL` and the `credentials` to log into the Otomi console.
 
-Now follow the activation instructions [here.](https:otomi.io/docs/get-started/activation)
+Now follow the activation instructions [here.](https://otomi.io/docs/get-started/activation)

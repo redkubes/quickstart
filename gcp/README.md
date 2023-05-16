@@ -77,8 +77,8 @@ At the end of the logs of the installer job, you will find the `URL` and the `cr
  ########################################################################################                                      
  #  To start using Otomi, go to https://<your-ip>.nip.io and sign in to the web console 
  #  with username "otomi-admin" and password "password".
- #  Then activate Drone. For more information see: https://otomi.io/docs/installation/activation
+ #  Then activate Drone. For more information see: https://otomi.io/docs/get-started/activation
  ########################################################################################
 ```
 
-Now follow the activation instructions [here.](https:otomi.io/docs/get-started/activation)
+Now follow the activation instructions [here.](https://otomi.io/docs/get-started/activation)
