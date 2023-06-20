@@ -81,14 +81,15 @@ data "aws_eks_cluster_auth" "cluster" {
 # Supporting Resources
 ################################################################################
 
+data "aws_availability_zones" "available" {}
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   name                 = var.cluster_name
   cidr                 = "10.0.0.0/16"
-  azs                  = var.aws_availability_zones
+  azs                  = slice(data.aws_availability_zones.available.names, 0, 3)
   private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   enable_nat_gateway   = true

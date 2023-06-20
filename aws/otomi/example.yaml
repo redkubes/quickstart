@@ -1,12 +1,11 @@
 cluster:
-  owner: redkubes
-  k8sVersion: "1.23"
-  name: otomi
-  provider: aws
-  apiName: otomi
-  region: eu-central-1
+  owner: my-company # Replace it with your company name
+  k8sVersion: "1.24" # One of Last 3 k8s versions which are supported by Otomi
+  name: otomi # Keep it same as your EKS cluster name
+  provider: aws # Don't change
+  region: eu-central-1 # your region
 otomi:
-  version: "v0.20.0"
+  version: "v0.21.5" # Otomi application version
   adminPassword: "welcomeotomi" # If you neglect this line, otomi will create a random password which can be supplied at the end of Job Log
 # kms:
 #   sops:

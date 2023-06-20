@@ -52,10 +52,6 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
-variable "aws_availability_zones" {
-  description = "AWS availability zones"
-  default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
-}
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
@@ -65,7 +61,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   type        = string
   description = "AWS EKS cluster version"
-  default     = "1.23"
+  default     = "1.24"
 }
 
 variable "environment" {
