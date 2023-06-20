@@ -3,6 +3,7 @@ cluster:
   k8sVersion: "1.24" # One of Last 3 k8s versions which are supported by Otomi
   name: otomi # Keep it same as your EKS cluster name
   provider: aws # Don't change
+  apiName: otomi # Don't change
   region: eu-central-1 # your region
 otomi:
   version: "v0.21.5" # Otomi application version
