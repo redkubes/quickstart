@@ -11,6 +11,3 @@ cluster_name = "otomi"
 
 # AWS region for all resources(default: eu-central-1)
 aws_region = "eu-central-1"
-
-# Kubernetes version used for creating workload cluster(default: 1.24)
-cluster_version = "1.24"

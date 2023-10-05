@@ -59,7 +59,7 @@ gcloud container clusters get-credentials $CLUSTER_NAME --region $COMPUTE_REGION
 helm repo add otomi https://otomi.io/otomi-core 
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.21" --set cluster.name=$CLUSTER_NAME --set cluster.provider=google
+helm install otomi otomi/otomi --set cluster.name=$CLUSTER_NAME --set cluster.provider=google
 ```
 
 The Helm chart deploys an installer job responsible for installing Otomi on the GKE cluster.
