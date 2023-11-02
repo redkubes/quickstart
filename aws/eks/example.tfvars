@@ -37,7 +37,7 @@ cluster_name = "otomi"
 aws_region = "eu-central-1"
 
 # Kubernetes version used for creating workload cluster(default: 1.21)
-cluster_version = "1.24"
+cluster_version = "1.26"
 
 instance_types = ["c5.xlarge"]
 

@@ -61,7 +61,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   type        = string
   description = "AWS EKS cluster version"
-  default     = "1.24"
+  default     = "1.26"
 }
 
 variable "environment" {

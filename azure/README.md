@@ -47,7 +47,7 @@ az aks create --name $CLUSTER_NAME \
 --nodepool-name otomipool \
 --node-count 3 \
 --node-vm-size Standard_F8s_v2 \
---kubernetes-version 1.23.15 \
+--kubernetes-version 1.26.9 \
 --enable-cluster-autoscaler \
 --min-count 1 \
 --max-count 6 \
@@ -72,7 +72,7 @@ az aks get-credentials -n $CLUSTER_NAME -g $RGNAME
 helm repo add otomi https://otomi.io/otomi-core 
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.23" --set cluster.name=$CLUSTER_NAME --set cluster.provider=azure
+helm install otomi otomi/otomi --set cluster.name=$CLUSTER_NAME --set cluster.provider=azure
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the AKS cluster.

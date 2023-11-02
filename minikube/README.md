@@ -37,25 +37,25 @@
 ### For Windows
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.23.17 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.26.9 --cni calico
 ```
 
 ### For Mac
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.23.17 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.26.9 --cni calico
 ```
 
 ### For Linux, using the KVM2 driver
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.23.17 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.26.9 --cni calico
 ```
 
 ### For using the Docker driver (Recommended for Apple M1 Chip)
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=docker --kubernetes-version=v1.23.17 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=docker --kubernetes-version=v1.26.9 --cni calico
 ```
 
 ## Enable Metallb (Network Load Balancer)
@@ -135,7 +135,7 @@ helm repo update
 ### Otomi install with minimal chart values
 
 ```bash
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.23" --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false --set apps.metrics-server.extraArgs.kubelet-insecure-tls=true --set apps.metrics-server.extraArgs.kubelet-preferred-address-types=InternalIP
+helm install otomi otomi/otomi --set cluster.name=minikube --set cluster.provider=custom --set apps.host-mods.enabled=false --set apps.metrics-server.extraArgs.kubelet-insecure-tls=true --set apps.metrics-server.extraArgs.kubelet-preferred-address-types=InternalIP
 ```
 
 The helm chart deploys an installer job responsible for installing the Otomi platform on the minikube cluster.

@@ -30,7 +30,7 @@ export KUBECONFIG=<path-to-downloads>/otomi-quickstart-kubeconfig.yaml
 helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 # Otomi install with minimal chart values
-helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=otomi-quickstart --set cluster.provider=custom
+helm install otomi otomi/otomi --set cluster.name=otomi-quickstart --set cluster.provider=custom
 ```
 
 The helm chart deploys an installer job responsible for installing Otomi on the GKE cluster.
